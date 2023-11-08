@@ -1,0 +1,45 @@
+:root {
+  /*colors*/
+  --magenta: #CB11AB;
+  --violet: #6725A8;
+  --smoky: #F6F6FA;
+  --white: #FFFFFF;
+  --black: #000000;
+  --deep-orange: #FF970D;
+  --gray: #9797AF;
+  --green: #0CB477;
+  --orange: #F55123;
+  --rulers: #0000001A;
+  --rulers-input: #00000033;
+  --red: #FF3B30;
+  --footer-text: rgba(255, 255, 255, 0.70);
+  --search-input: rgb(132, 80, 184);
+}
+
+.bg-violet {
+  background-color: var(--violet, #6725A8);;
+}
+
+.bg-smoky {
+  background-color: var(--smoky, #F6F6FA);
+}
+
+.bg-orange {
+  background-color: var(--orange, #F55123);
+}
+
+.bg-search-input {
+  background-color: var(--search-input, rgb(132, 80, 184));
+}
+
+.color-footer-text {
+  color: rgba(255, 255, 255, 0.70);
+}
+
+.color-white {
+  color: #FFFFFF;
+}
+
+.border-menu {
+  border: 1px solid rgba(255, 255, 255, 0.45);
+}
