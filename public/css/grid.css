@@ -1,0 +1,57 @@
+.grid-1 {
+  display: grid;
+  gap: 1px;
+}
+
+.grid-4 {
+  display: grid;
+  gap: 4px;
+}
+
+.grid-6 {
+  display: grid;
+  gap: 6px;
+}
+
+.grid-8 {
+  display: grid;
+  gap: 8px;
+}
+
+.grid-12 {
+  display: grid;
+  gap: 12px;
+}
+
+.grid-16 {
+  display: grid;
+  gap: 16px;
+}
+
+.grid-c-16 {
+  display: grid;
+  column-gap: 16px;
+}
+
+.grid-24 {
+  display: grid;
+  gap: 24px;
+}
+
+.grid-32 {
+  display: grid;
+  gap: 32px;
+}
+
+.grid-40 {
+  display: grid;
+  gap: 40px;
+}
+
+.grid-1fr-min {
+  grid-template-columns: 1fr min-content;
+}
+
+.grid-min-1fr {
+  grid-template-columns: min-content 1fr;
+}

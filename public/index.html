@@ -3,45 +3,130 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="index.css">
-  <title>Title</title>
+  <link rel="icon" href="favicon.ico" type="image/vnd.microsoft.icon">
+  <title>Корзина - Товары и точка</title>
 </head>
-<body>
+<body class="ff-Regular">
 <div class="main bg-violet">
-  <div class="header p-16-24">
+  <div class="header p-16-20-16-24">
+
+
+
     <div class="left-header">
-      <button class="menu bg-violet br-8 border-menu m-auto size-menu">
+      <button class="menu bg-violet br-8 border-menu m-auto center size-menu p-0">
         <img class="menu__icon" src="static/img/menu.svg" alt="menu">
       </button>
-      <div class="left-header__logo color-white f-28 font-family-Segoe-UI fw-600 lh-24 fv-all-small-caps ls-0-56 p-1-0-7-0">Товары и точка</div>
+      <div class="left-header__logo ff-Bold f-30 color-white fw-600 lh-24 fv-all-small-caps ls-1-7 p-1-0-7-0">Товары и точка</div>
     </div>
     <div class="search-field br-36 p-0-10 m-4-0 bg-search-input">
-      <input class="search-field__input opacity-0-5 bg-search-input m-auto w-100 f-18 font-family-Segoe-UI f-normal fw-400 lh-24 color-white h-28 br-none outline-none" placeholder="Я ищу..." >
+      <input class="search-field__input opacity-0-5 bg-search-input m-auto w-100 f-18 color-white f-normal fw-400 lh-24 h-28 br-none outline-none" placeholder="Я ищу..." >
       <button class="search bg-search-input br-none p-0">
         <img class="search__icon opacity-0-4" src="static/img/search.svg" alt="search">
       </button>
     </div>
-    <div class="right-header">
+    <div class="right-header f-normal">
       <div class="profile profile-cart-grid">
         <img class="profile__icon m-auto" src="static/img/profile.svg" alt="profile">
-        <div class="profile__text font-family-Segoe-UI color-white f-13 f-normal fw-400 lh-16 text-center">Профиль</div>
+        <div class="profile__text color-white f-13 fw-400 lh-16 ta-center">Профиль</div>
       </div>
       <div class="cart profile-cart-grid">
-        <img class="cart__icon m-auto" src="static/img/cart.svg" alt="cart">
-        <div class="cart__text font-family-Segoe-UI color-white f-13 f-normal fw-400 lh-16 text-center">Корзина</div>
-        <div class="cart__notification br-16 bg-orange font-family-Segoe-UI color-white f-10 f-normal fw-700 lh-18 text-center">3</div>
+        <img class="cart__icon m-a-18-a-10" src="static/img/cart.svg" alt="cart">
+        <div class="cart__text color-white f-13 fw-400 lh-16 ta-center">Корзина</div>
+        <div class="cart__notification br-16 bg-orange color-white f-10 fw-700 lh-18 ta-center" id="js-cart-notification"> 3 </div> <!--ToDo: проброс из js-->
       </div>
     </div>
   </div>
-  <div class="content br-24 bg-smoky">
-    <div class="cart">
-
+  <div class="content br-24 bg-smoky p-22-24-50-24">
+    <div class="z grid-40 mt-12" style="height: max-content">
+      <div class="products bg-orange" style="height: 100px"></div>
+      <div class="missing-products bg-orange" style="height: 100px"></div>
+      <div class="order-details bg-orange" style="height: 100px"></div>
     </div>
-    <div class="result">
-
+    <div class="order-summary grid-24 p-16-24-24-24 f-normal ff-Regular">
+      <div class="grid-8 color-black">
+        <div class="price text-spacing fw-700">
+          <span class="price__title ff-Bold f-24 lh-33 ls--0-24px">Итого</span>
+          <span>
+            <span class="price__number ff-Bold f-24 lh-32 ls--0-24px" id="js-price">2 101 063</span> <!--ToDo: проброс из js-->
+            <span class="price__currency ff-Bold f-20 lh-28 ls--0-2px" id="js-price-currency">сом</span> <!--ToDo: проброс из js-->
+          </span>
+        </div>
+        <div class="order-structure f-16 fw-400 lh-24">
+          <span class="text-spacing">
+            <span id="js-product-count">203 товара</span> <!--ToDo: проброс из js-->
+            <span id="js-price-without-sale">2 302 048 сом</span> <!--ToDo: проброс из js-->
+          </span>
+          <span class="text-spacing">
+            <span>Скидка</span> <!--ToDo: проброс из js-->
+            <span id="js-sale">−200 985 сом</span> <!--ToDo: проброс из js-->
+          </span>
+          <span class="text-spacing">
+            <span>Доставка</span>
+            <span id="js-delivery-price">Бесплатно</span> <!--ToDo: проброс из js-->
+          </span>
+        </div>
+      </div>
+      <div class="delivery grid-12">
+        <div class="delivery-info grid-4 f-16 fw-700 lh-24">
+          <div class="delivery-type grid-1fr-min grid-16">
+            <span class="delivery-type__text ff-Bold color-black" id="js-delivery-type">Доставка в пункт выдачи</span> <!--ToDo: проброс из js-->
+            <button class="delivery-type__change br-none p-0 center bg-inherit" id="js-delivery-type-change">
+              <img src="static/img/change.svg" alt="change">
+            </button>
+          </div>
+          <span class="delivery-info__address f-13 fw-400 lh-16 color-black" id="js-delivery-address">Бишкек, улица Ахматбека Суюмбаева, 12/1</span> <!--ToDo: проброс из js-->
+          <span class="delivery-info__data f-13 fw-400 lh-16 color-magenta underline underline-magenta" id="js-delivery-data">5–8 фев</span> <!--ToDo: проброс из js-->
+        </div>
+        <div class="return-info p-8-8-12-8 grid-min-1fr grid-8 bg-smoky br-8">
+          <img class="m-auto" src="static/img/price_shipping.svg" alt="price_shipping">
+          <div class="return-info__text f-13 fw-400 lh-16 color-black">
+            Обратная доставка товаров на склад при отказе — 
+            <span class="color-green underline underline-green">бесплатно</span>
+          </div>
+        </div>
+      </div>
+      <div class="pay grid-12">
+        <div class="pay-info grid-4 f-16 fw-700 lh-24">
+          <div class="pay-type grid-1fr-min grid-16">
+            <span class="pay-type__text ff-Bold color-black" id="js-pay-type">Оплата картой</span> <!--ToDo: проброс из js-->
+            <button class="pay-type__change br-none p-0 center bg-inherit" id="js-pay-type-change">
+              <img src="static/img/change.svg" alt="change">
+            </button>
+          </div>
+          <div class="requisites grid-min-1fr grid-8">
+            <div class="br-4 bg-smoky p-0-1" style="display: grid; height: 24px">
+              <img class="m-auto" style="" src="static/img/mir.svg" alt="mir">
+            </div>
+            <span class="requisites__card f-13 fw-400 lh-16 color-black vertical-center">1234 12•• •••• 1234</span>
+          </div>
+        </div>
+        <div class="pay-immediately br-8 bg-smoky grid-8 p-8-8-12-8">
+          <div class="pay-immediately-change grid-min-1fr grid-8">
+            <label for="pay-immediately-checkbox">
+              <input type="checkbox" id="pay-immediately-checkbox">
+              <div class="checkbox-images">
+                <img class="m-auto img1" src="static/img/checkbox.svg" alt="checkbox">
+                <img class="m-auto img2" src="static/img/checkbox_choose.svg" alt="checkbox_choose">
+              </div>
+            </label>
+            <span class="pay-immediately-change__text f-13 fw-400 lh-16 color-black vertical-center">Списать оплату сразу</span>
+          </div>
+          <span class="f-13 fw-400 lh-16 color-black" id="js-pay-immediately-text">Спишем оплату с карты при получении</span> <!--ToDo: проброс из js-->
+        </div>
+      </div>
+      <div class="order-confirm grid-12">
+        <button class="order-confirm__button color-white ff-Bold f-normal f-16 fw-700 lh-24 p-0-32-5-32 br-8 bg-magenta br-none center">Заказать</button>
+        <div class="grid-min-1fr grid-8">
+          <img class="" src="static/img/agreement.svg" alt="agreement">
+          <span class="order-confirm____text f-13 fw-400 lh-16 color-black">
+            <span>Соглашаюсь с </span><span class="underline underline-gray-unbroken">правилами пользования торговой площадкой</span><span> и </span><span class="underline underline-gray-unbroken">возврата</span>
+          </span>
+        </div>
+      </div>
     </div>
   </div>
   <div class="footer p-24">
-    <div class="footer__text font-family-Segoe-UI f-13 color-footer-text text-center">© 2022 ООО «Товары и точка»</div>
+    <div class="footer__text f-13 color-footer-text ta-center">© 2022 ООО «Товары и точка»</div>
   </div>
 </div>
 </body>

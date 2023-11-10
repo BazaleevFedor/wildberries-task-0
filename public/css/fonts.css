@@ -1,10 +1,28 @@
 @font-face {
-  font-family: SegoeUI;
+  font-family: SegoeUI-Regular;
   src: url('../static/fonts/SegoeUI-Regular.woff');
 }
 
-.font-family-Segoe-UI {
-  font-family: SegoeUI, serif;
+@font-face {
+  font-family: SegoeUI-SemiBold;
+  src: url('../static/fonts/SegoeUI-SemiBold.ttf');
+}
+
+@font-face {
+  font-family: SegoeUI-Bold;
+  src: url('../static/fonts/SegoeUI-Bold.ttf');
+}
+
+.ff-Regular {
+  font-family: SegoeUI-Regular, serif;
+}
+
+.ff-SemiBold {
+  font-family: SegoeUI-SemiBold, serif;
+}
+
+.ff-Bold {
+  font-family: SegoeUI-Bold, serif;
 }
 
 .f-normal {
@@ -23,8 +41,12 @@
   font-weight: 700;
 }
 
-.lh-24 {
-  line-height: 24px;
+.fw-800 {
+  font-weight: 800;
+}
+
+.fw-900 {
+  font-weight: 900;
 }
 
 .lh-16 {
@@ -35,13 +57,37 @@
   line-height: 18px;
 }
 
+.lh-24 {
+  line-height: 24px;
+}
+
+.lh-28 {
+  line-height: 28px;
+}
+
+.lh-32 {
+  line-height: 32px;
+}
+
 .fv-all-small-caps {
   font-variant: all-small-caps;
 
 }
 
+.ls-1-7 {
+  letter-spacing: 1.7px;
+}
+
 .ls-0-56 {
-  letter-spacing: 3px;
+  letter-spacing: 0.56px;
+}
+
+.ls--0-24px {
+  letter-spacing: -0.24px;
+}
+
+.ls--0-2px {
+  letter-spacing: -0.2px;
 }
 
 .f-10 {
@@ -52,10 +98,30 @@
   font-size: 13px;
 }
 
+.f-16 {
+  font-size: 16px;
+}
+
 .f-18 {
   font-size: 18px;
 }
 
+.f-20 {
+  font-size: 20px;
+}
+
+.f-24 {
+  font-size: 24px;
+}
+
 .f-28 {
   font-size: 28px;
+}
+
+.f-29 {
+  font-size: 29px;
+}
+
+.f-30 {
+  font-size: 30px;
 }

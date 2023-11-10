@@ -1,18 +1,19 @@
 @import "css/colors.css";
 @import "css/fonts.css";
 @import "css/general.css";
+@import "css/adaptive.css";
+@import "css/grid.css";
 
 
 html, body {
   margin: 0;
-  height: 100vh;
 }
 
 .main {
   display: grid;
   grid-template-rows: 88px 1fr 64px;
 
-  height: 100%;
+  min-height: 100vh;
 }
 
 .header {
@@ -23,7 +24,7 @@ html, body {
 
 .left-header {
   display: grid;
-  grid-template-columns: 48px 1fr; /*28.2% 1fr*/
+  grid-template-columns: 48px 1fr;
   gap: 16px;
 }
 
@@ -61,9 +62,11 @@ html, body {
   grid-template-rows: 30px 20px;
   gap: 6px;
 }
+
 .cart {
   position: relative;
 }
+
 .cart__notification {
   position: absolute;
   height: 16px;
@@ -73,10 +76,56 @@ html, body {
   justify-content: center;
   align-items: center;
 
-  right: 0;
-  top: 0;
+  right: 8px;
+  top: -4px;
+
+  margin: auto;
 }
 
 .left-header__logo {
   word-wrap: break-word;
+}
+
+.z {
+
+}
+
+.content {
+  display: grid;
+}
+
+.order-summary {
+  border-radius: 16px;
+  background: #FFFFFF;
+  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.30), 0 2px 10px 0 rgba(0, 0, 0, 0.15);
+  height: max-content;
+}
+
+#pay-immediately-checkbox {
+  display: none;
+}
+
+.checkbox-images {
+  position: relative;
+  display: block;
+}
+
+.img1 {
+  display: block;
+}
+
+.img2 {
+  display: none;
+}
+
+#pay-immediately-checkbox:checked + .checkbox-images .img1 {
+  display: none;
+}
+
+#pay-immediately-checkbox:checked + .checkbox-images .img2 {
+  display: block;
+}
+
+.order-confirm__button {
+  height: 44px;
 }
