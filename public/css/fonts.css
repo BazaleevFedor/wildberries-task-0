@@ -57,6 +57,10 @@
   line-height: 18px;
 }
 
+.lh-20 {
+  line-height: 20px;
+}
+
 .lh-24 {
   line-height: 24px;
 }
@@ -69,6 +73,10 @@
   line-height: 32px;
 }
 
+.lh-36 {
+  line-height: 36px;
+}
+
 .fv-all-small-caps {
   font-variant: all-small-caps;
 
@@ -78,12 +86,20 @@
   letter-spacing: 1.7px;
 }
 
+.ls-2 {
+  letter-spacing: 2px;
+}
+
 .ls-0-56 {
   letter-spacing: 0.56px;
 }
 
 .ls--0-24px {
   letter-spacing: -0.24px;
+}
+
+.ls--0-28px {
+  letter-spacing: -0.28px;
 }
 
 .ls--0-2px {
@@ -110,8 +126,20 @@
   font-size: 20px;
 }
 
+.f-100 {
+  font-size: 100%;
+}
+
 .f-24 {
   font-size: 24px;
+}
+
+.f-26 {
+  font-size: 26px;
+}
+
+.f-27 {
+  font-size: 27px;
 }
 
 .f-28 {

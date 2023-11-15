@@ -5,44 +5,154 @@
   <link rel="stylesheet" href="index.css">
   <link rel="icon" href="favicon.ico" type="image/vnd.microsoft.icon">
   <title>Корзина - Товары и точка</title>
+  <script type="module" src="index.js"></script>
 </head>
 <body class="ff-Regular">
 <div class="main bg-violet">
-  <div class="header p-16-20-16-24">
-
-
-
-    <div class="left-header">
-      <button class="menu bg-violet br-8 border-menu m-auto center size-menu p-0">
-        <img class="menu__icon" src="static/img/menu.svg" alt="menu">
-      </button>
-      <div class="left-header__logo ff-Bold f-30 color-white fw-600 lh-24 fv-all-small-caps ls-1-7 p-1-0-7-0">Товары и точка</div>
-    </div>
-    <div class="search-field br-36 p-0-10 m-4-0 bg-search-input">
-      <input class="search-field__input opacity-0-5 bg-search-input m-auto w-100 f-18 color-white f-normal fw-400 lh-24 h-28 br-none outline-none" placeholder="Я ищу..." >
+  <div class="header">
+    <button class="header__menu large_components bg-violet br-8 border-menu m-auto center size-menu p-0">
+      <img class="menu__icon" src="static/img/menu.svg" alt="menu">
+    </button>
+    <div class="header__logo large_components ff-Bold f-30 color-white fw-600 lh-24 fv-all-small-caps ls-1-7 p-1-0-7-0">Товары и точка</div>
+    <div class="header__search-field large_components br-36 p-0-20 m-4-0 bg-search-input">
+      <label class="center">
+        <input class="search-field__input opacity-0-5 bg-search-input m-auto w-100 f-18 color-white f-normal fw-400 lh-24 h-28 br-none outline-none" placeholder="Я ищу..." >
+      </label>
       <button class="search bg-search-input br-none p-0">
         <img class="search__icon opacity-0-4" src="static/img/search.svg" alt="search">
       </button>
     </div>
-    <div class="right-header f-normal">
-      <div class="profile profile-cart-grid">
-        <img class="profile__icon m-auto" src="static/img/profile.svg" alt="profile">
-        <div class="profile__text color-white f-13 fw-400 lh-16 ta-center">Профиль</div>
-      </div>
-      <div class="cart profile-cart-grid">
-        <img class="cart__icon m-a-18-a-10" src="static/img/cart.svg" alt="cart">
-        <div class="cart__text color-white f-13 fw-400 lh-16 ta-center">Корзина</div>
-        <div class="cart__notification br-16 bg-orange color-white f-10 fw-700 lh-18 ta-center" id="js-cart-notification"> 3 </div> <!--ToDo: проброс из js-->
-      </div>
+    <div class="header__profile large_components profile-cart-grid f-normal">
+      <img class="profile__icon m-auto" src="static/img/profile.svg" alt="profile">
+      <div class="profile__text color-white f-13 fw-400 lh-16 ta-center">Профиль</div>
     </div>
+    <div class="header-cart large_components profile-cart-grid f-normal">
+      <img class="header-cart__icon m-a-18-a-10" src="static/img/cart.svg" alt="cart">
+      <div class="header-cart__text color-white f-13 fw-400 lh-16 ta-center">Корзина</div>
+      <div class="header-cart__notification br-16 bg-orange color-white f-10 fw-700 lh-18 ta-center" id="js-cart-notification"> 3 </div> <!--ToDo: проброс из js-->
+    </div>
+    <button class="header__small-menu small_components bg-violet br-none p-0 m-auto">
+      <img class="menu__icon" src="static/img/menu_small.svg" alt="menu">
+    </button>
+    <div class="header__small-logo small_components ff-Bold f-27 color-white fw-600 lh-24 fv-all-small-caps ls-2 p-11-4-21-4">Товары и точка</div>
+    <button class="header__small-search small_components bg-violet br-none p-0 m-auto">
+      <img class="menu__icon" src="static/img/search_small.svg" alt="search_small">
+    </button>
   </div>
   <div class="content br-24 bg-smoky p-22-24-50-24">
-    <div class="z grid-40 mt-12" style="height: max-content">
-      <div class="products bg-orange" style="height: 100px"></div>
-      <div class="missing-products bg-orange" style="height: 100px"></div>
-      <div class="order-details bg-orange" style="height: 100px"></div>
+    <div class="cart mt-12 h-max-content">
+      <span class="cart__title ff-Bold f-28 f-normal fw-700 lh-36 ls--0-28px">Корзина</span>
+      <div class="grid-40">
+        <div class="products">
+          <div class="products-choose_all center">
+            <label class="label-checkbox">
+              <input type="checkbox" class="checkbox" checked>
+              <div class="checkbox-images">
+                <img class="m-auto img1" src="static/img/checkbox.svg" alt="checkbox">
+                <img class="m-auto img2" src="static/img/checkbox_choose.svg" alt="checkbox_choose">
+              </div>
+            </label>
+            <span class="f-16 f-normal fw-400 lh-24 vertical-center">Выбрать все</span>
+            <img class="" src="static/img/hide.svg" alt="hide">
+            <div class="products__line"></div>
+          </div>
+          <div class="grid-20" id="js-products-container">
+
+          </div>
+        </div>
+        <div class="missing-products">
+          <div class="missing-products_count center">
+            <span class="f-16 f-normal fw-400 lh-24 vertical-center">Отсутствуют · 3 товара</span>
+            <img class="" src="static/img/hide.svg" alt="hide">
+            <div class="products__line"></div>
+          </div>
+          <div class="grid-20" id="js-missing-products-container">
+
+          </div>
+        </div>
+        <div style="display: none" class="order-details">
+          <div class="grid-16">
+            <div class="bg-white br-16 p-16-24-24-24 grid-16">
+              <div class="delivery-type grid-1fr-min grid-10">
+                <span class="ff-Bold f-24 f-normal fw-700 lh-32 ls--0-24px color-black">Способ доставки</span>
+                <button class="delivery-type__change br-none p-0 center bg-inherit">
+                  <span class="ff-Bold f-16 f-normal fw-700 lh-24 color-magenta">Изменить</span>
+                </button>
+              </div>
+              <div class="grid-24">
+                <div class="delivery-table">
+                  <span>Пункт выдачи</span>
+                  <div class="grid-4">
+                    <span style="word-wrap: break-word;">Бишкек, улица Ахматбека Суюмбаева, 12/1</span>
+                    <div>Ежедневно с 10 до 21 </div>
+                  </div>
+                  <span>Стоимость доставки</span>
+                  <span>Бесплатно</span>
+                  <span>5—6 февраля</span>
+                  <div class="delivery-table__photo br-8">
+                    <div class="cart-tabbar">
+                      <img class="delivery-table__pic br-8" src="backend_data/1.png" alt="1">
+<!--                      <div class="delivery__notification br-16 bg-orange color-white f-10 fw-600 lh-18 ta-center"></div> &lt;!&ndash;ToDo: проброс из js&ndash;&gt;-->
+                    </div>
+
+                    <div class="cart-tabbar">
+                      <img class="delivery-table__pic br-8" src="backend_data/2.png" alt="2">
+                      <div class="delivery__notification br-16 bg-orange color-white f-10 fw-600 lh-18 ta-center"> 184 </div> <!--ToDo: проброс из js-->
+                    </div>
+
+                    <div class="cart-tabbar">
+                      <img class="delivery-table__pic br-8" src="backend_data/3.png" alt="3">
+                      <div class="delivery__notification br-16 bg-orange color-white f-10 fw-600 lh-18 ta-center"> 2 </div> <!--ToDo: проброс из js-->
+                    </div>
+                  </div>
+                  <span>7—8 февраля</span>
+                  <div class="delivery-table__photo br-8">
+                    <div class="cart-tabbar">
+                      <img class="delivery-table__pic br-8" src="backend_data/2.png" alt="2">
+                      <div class="delivery__notification br-16 bg-orange color-white f-10 fw-600 lh-18 ta-center"> 16 </div> <!--ToDo: проброс из js-->
+                    </div>
+                  </div>
+                </div>
+                <div class="return-info grid-min-1fr grid-8">
+                  <img class="m-auto" src="static/img/price_shipping.svg" alt="price_shipping">
+                  <div class="return-info__text f-13 fw-400 lh-16 color-black vertical-center">
+                    Обратная доставка товаров на склад при отказе — 
+                    <span class="color-green underline underline-green">бесплатно</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="br-16 bg-white p-16-24-24-24 grid-16">
+              <div class="delivery-type grid-1fr-min grid-10">
+                <span class="ff-Bold f-24 f-normal fw-700 lh-32 ls--0-24px color-black">Способ оплаты</span>
+                <button class="delivery-type__change br-none p-0 center bg-inherit">
+                  <span class="ff-Bold f-16 f-normal fw-700 lh-24 color-magenta">Изменить</span>
+                </button>
+              </div>
+              <div class="grid-8">
+                <div class="requisites grid-min-1fr grid-8">
+                  <div class="br-4 bg-smoky p-0-1" style="display: grid; height: 24px">
+                    <img class="m-auto" style="" src="static/img/mir.svg" alt="mir">
+                  </div>
+                  <span class="requisites__card f-13 fw-400 lh-16 color-black vertical-center">1234 12•• •••• 1234  01/30</span>
+                </div>
+                <span class="f-normal f-13 fw-400 color-gray lh-16">Спишем оплату с карты при получении</span>
+              </div>
+            </div>
+            <div class="br-16 bg-white p-16-24-24-24">
+              <div class="grid-16">
+                <span class="ff-Bold f-24 f-normal fw-700 lh-32 ls--0-24px color-black">Получатель</span>
+                <div style="display: flex; flex-wrap: wrap;">
+                  <div class="user bg-violet">1</div>
+                  <div class="user bg-orange">1</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="order-summary grid-24 p-16-24-24-24 f-normal ff-Regular">
+    <div style="display: none"  class="order-summary grid-24 p-16-24-24-24 f-normal ff-Regular">
       <div class="grid-8 color-black">
         <div class="price text-spacing fw-700">
           <span class="price__title ff-Bold f-24 lh-33 ls--0-24px">Итого</span>
@@ -103,7 +213,7 @@
         <div class="pay-immediately br-8 bg-smoky grid-8 p-8-8-12-8">
           <div class="pay-immediately-change grid-min-1fr grid-8">
             <label for="pay-immediately-checkbox">
-              <input type="checkbox" id="pay-immediately-checkbox">
+              <input type="checkbox" id="pay-immediately-checkbox" class="checkbox">
               <div class="checkbox-images">
                 <img class="m-auto img1" src="static/img/checkbox.svg" alt="checkbox">
                 <img class="m-auto img2" src="static/img/checkbox_choose.svg" alt="checkbox_choose">
@@ -127,6 +237,16 @@
   </div>
   <div class="footer p-24">
     <div class="footer__text f-13 color-footer-text ta-center">© 2022 ООО «Товары и точка»</div>
+  </div>
+  <div class="tabbar pic-spacing bg-white p-0-13">
+    <img class="" src="static/img/home_tabbar.svg" alt="home_tabbar">
+    <img class="" src="static/img/catalog_tabbar.svg" alt="catalog_tabbar">
+    <div class="cart-tabbar">
+      <img class="" src="static/img/cart_tabbar.svg" alt="cart_tabbar">
+      <div class="header-cart__notification br-16 bg-orange color-white f-10 fw-700 lh-18 ta-center" id="js-cart-tabbar-notification"> 3 </div> <!--ToDo: проброс из js-->
+    </div>
+    <img class="" src="static/img/favorites_tabbar.svg" alt="favorites_tabbar">
+    <img class="" src="static/img/profile_tabbar.svg" alt="profile_tabbar">
   </div>
 </div>
 </body>

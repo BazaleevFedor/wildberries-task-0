@@ -8,6 +8,11 @@
   gap: 4px;
 }
 
+.grid-5 {
+  display: grid;
+  gap: 5px;
+}
+
 .grid-6 {
   display: grid;
   gap: 6px;
@@ -16,6 +21,16 @@
 .grid-8 {
   display: grid;
   gap: 8px;
+}
+
+.grid-10 {
+  display: grid;
+  gap: 10px;
+}
+
+.grid-11 {
+  display: grid;
+  gap: 11px;
 }
 
 .grid-12 {
@@ -33,9 +48,19 @@
   column-gap: 16px;
 }
 
+.grid-20 {
+  display: grid;
+  gap: 20px;
+}
+
 .grid-24 {
   display: grid;
   gap: 24px;
+}
+
+.grid-27 {
+  display: grid;
+  gap: 27px;
 }
 
 .grid-32 {

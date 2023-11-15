@@ -6,6 +6,10 @@
   text-align: center;
 }
 
+.ta-right {
+  text-align: right
+}
+
 .p-24 {
   padding: 24px;
 }
@@ -30,8 +34,20 @@
   padding: 12px 10px;
 }
 
-.p-0-10 {
+.p-t-12 {
+  padding-top: 12px;
+}
+
+.p-t-9 {
+  padding-top: 9px;
+}
+
+.p-0-20 {
   padding: 0 20px;
+}
+
+.p-0-13 {
+  padding: 0 13px;
 }
 
 .p-4-0 {
@@ -40,6 +56,10 @@
 
 .p-0 {
   padding: 0;
+}
+
+.p-b-5 {
+  padding-bottom: 5px;
 }
 
 .p-0-1 {
@@ -58,8 +78,20 @@
   padding: 1px 0 7px 0;
 }
 
+.p-11-4-21-4 {
+  padding: 11px 4px 21px 4px;
+}
+
 .p-16-24-24-24 {
   padding: 16px 24px 24px 24px;
+}
+
+.p-12-8-16-11 {
+  padding: 12px 8px 16px 11px
+}
+
+.p-12-11-16-8 {
+  padding: 12px 11px 16px 8px
 }
 
 .p-8-8-12-8 {
@@ -76,6 +108,15 @@
 
 .m-auto {
   margin: auto;
+}
+
+.m-vertical-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.m-l-auto {
+  margin-left: auto;
 }
 
 .m-a-18-a-10 {
@@ -126,6 +167,14 @@
   width: 100%;
 }
 
+.h-max-content {
+  height: max-content;
+}
+
+.w-max-content {
+  width: max-content;
+}
+
 .box-shadow {
   box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.30), 0 2px 10px 0 rgba(0, 0, 0, 0.15);
 }
@@ -135,6 +184,12 @@
   justify-content: space-between;
   align-items: flex-start;
   align-self: stretch;
+}
+
+.pic-spacing {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .center {
@@ -157,4 +212,52 @@
   width: max-content;
   background-repeat: repeat-x;
   background-position: bottom left;
+}
+
+.size-menu {
+  height: 48px;
+  width: 48px;
+}
+
+.checkbox {
+  display: none;
+}
+.checkbox-images {
+  position: relative;
+  display: block;
+}
+.img1 {
+  display: block;
+}
+.img2 {
+  display: none;
+}
+.checkbox:checked + .checkbox-images .img1 {
+  display: none;
+}
+.checkbox:checked + .checkbox-images .img2 {
+  display: block;
+}
+
+.cross-out {
+  position: relative;
+}
+
+.cross-out::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: #9797AF;
+}
+
+.display-none {
+  display: none;
+}
+
+.overflow-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

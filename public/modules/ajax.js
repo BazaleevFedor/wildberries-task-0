@@ -25,7 +25,8 @@ class Ajax {
    * @returns {Object} - тело ответа
    */
   async getUsersCart() {
-    return this._request();
+    return
+    // return this._request();
   }
 }
 

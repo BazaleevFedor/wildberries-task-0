@@ -28,6 +28,10 @@
   background-color: var(--smoky, #F6F6FA);
 }
 
+.bg-white {
+  background-color: var(--white, #FFFFFF);
+}
+
 .bg-orange {
   background-color: var(--orange, #F55123);
 }
@@ -54,6 +58,14 @@
 
 .color-green {
   color: var(--green, #0CB477);
+}
+
+.color-red {
+  color: var(--red, #FF3B30);
+}
+
+.color-gray {
+  color: var(--gray, #9797AF);
 }
 
 .color-magenta {
