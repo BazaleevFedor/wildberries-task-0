@@ -1,6 +1,6 @@
 class MissingProductItem {
   constructor() {
-
+    this.missingProductsContainer = document.getElementById('js-missing-products-container');
   }
 
   _getProps(product) {
@@ -36,7 +36,7 @@ class MissingProductItem {
   render(product) {
     const {size, props} = this._getProps(product);
 
-    return (
+    this.missingProductsContainer.innerHTML += (
       `
         <div class="missing-product__item" data-id="${product.id}">
           <div class="item-info p-t-12">
@@ -53,7 +53,7 @@ class MissingProductItem {
             <div class="counter p-t-9">
               <div class="product-management m-vertical-auto"> <!--ToDo: проброс из js-->
                 <label class="label-checkbox"> <!--ToDo: проброс из js-->
-                  <input type="checkbox" class="checkbox" data-id="${product.id}" id="js-missing-product-favorites-${product.id}">
+                  <input type="checkbox" class="checkbox js-missing-product-favorites" data-id="${product.id}" id="js-missing-product-favorites-${product.id}">
                   <div class="checkbox-images">
                     <img class="m-auto img1" src="static/img/favorites.svg" alt="favorites">
                     <img class="m-auto img2" src="static/img/favorites_choose.svg" alt="favorites_choose">

@@ -37,6 +37,11 @@
     width: 80px;
     height: 32px;
   }
+
+  .discount-info {
+    top: 100%;
+    left: 0;
+  }
 }
 
 @media (min-width: 700px) {
@@ -75,6 +80,11 @@
   .product-counter {
     width: 100px;
     height: 44px;
+  }
+
+  .discount-info {
+    top: 50px;
+    right: -10px;
   }
 }
 

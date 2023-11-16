@@ -3,7 +3,7 @@ class Header {
     this.cartNotification = document.getElementById('js-cart-notification');
   }
 
-  setNotification(value) {
+  setCartNotification(value) {
     if (this.cartNotification) this.cartNotification.innerHTML = `${value}`;
   }
 }

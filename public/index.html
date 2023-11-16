@@ -46,17 +46,19 @@
         <div class="products">
           <div class="products-choose_all center">
             <label class="label-checkbox">
-              <input type="checkbox" class="checkbox" checked>
+              <input type="checkbox" class="checkbox opacity-hover" checked id="js-choose-all">
               <div class="checkbox-images">
                 <img class="m-auto img1" src="static/img/checkbox.svg" alt="checkbox">
                 <img class="m-auto img2" src="static/img/checkbox_choose.svg" alt="checkbox_choose">
               </div>
             </label>
             <span class="f-16 f-normal fw-400 lh-24 vertical-center">Выбрать все</span>
-            <img class="" src="static/img/hide.svg" alt="hide">
+            <button class="br-none p-0 center bg-inherit" id="js-toggle-products">
+              <img class="" src="static/img/hide.svg" alt="hide">
+            </button>
             <div class="products__line"></div>
           </div>
-          <div class="grid-20" id="js-products-container">
+          <div class="grid-20 product-container" id="js-products-container">
 
           </div>
         </div>
@@ -152,23 +154,23 @@
         </div>
       </div>
     </div>
-    <div style="display: none"  class="order-summary grid-24 p-16-24-24-24 f-normal ff-Regular">
+    <div class="order-summary grid-24 p-16-24-24-24 f-normal ff-Regular">
       <div class="grid-8 color-black">
         <div class="price text-spacing fw-700">
           <span class="price__title ff-Bold f-24 lh-33 ls--0-24px">Итого</span>
           <span>
-            <span class="price__number ff-Bold f-24 lh-32 ls--0-24px" id="js-price">2 101 063</span> <!--ToDo: проброс из js-->
+            <span class="price__number ff-Bold f-24 lh-32 ls--0-24px" id="js-price"></span> <!--ToDo: проброс из js-->
             <span class="price__currency ff-Bold f-20 lh-28 ls--0-2px" id="js-price-currency">сом</span> <!--ToDo: проброс из js-->
           </span>
         </div>
         <div class="order-structure f-16 fw-400 lh-24">
           <span class="text-spacing">
             <span id="js-product-count">203 товара</span> <!--ToDo: проброс из js-->
-            <span id="js-price-without-sale">2 302 048 сом</span> <!--ToDo: проброс из js-->
+            <span id="js-price-without-discount">2 302 048 сом</span> <!--ToDo: проброс из js-->
           </span>
           <span class="text-spacing">
             <span>Скидка</span> <!--ToDo: проброс из js-->
-            <span id="js-sale">−200 985 сом</span> <!--ToDo: проброс из js-->
+            <span id="js-sale">−200 985 сом</span> <!--ToDo: проброс из js-->
           </span>
           <span class="text-spacing">
             <span>Доставка</span>
@@ -213,7 +215,7 @@
         <div class="pay-immediately br-8 bg-smoky grid-8 p-8-8-12-8">
           <div class="pay-immediately-change grid-min-1fr grid-8">
             <label for="pay-immediately-checkbox">
-              <input type="checkbox" id="pay-immediately-checkbox" class="checkbox">
+              <input type="checkbox" id="pay-immediately-checkbox" class="checkbox opacity-hover">
               <div class="checkbox-images">
                 <img class="m-auto img1" src="static/img/checkbox.svg" alt="checkbox">
                 <img class="m-auto img2" src="static/img/checkbox_choose.svg" alt="checkbox_choose">
@@ -243,9 +245,12 @@
     <img class="" src="static/img/catalog_tabbar.svg" alt="catalog_tabbar">
     <div class="cart-tabbar">
       <img class="" src="static/img/cart_tabbar.svg" alt="cart_tabbar">
-      <div class="header-cart__notification br-16 bg-orange color-white f-10 fw-700 lh-18 ta-center" id="js-cart-tabbar-notification"> 3 </div> <!--ToDo: проброс из js-->
+      <div class="header-cart__notification br-16 bg-orange color-white f-10 fw-700 lh-18 ta-center display-inline-flex" id="js-cart-tabbar-notification"> 3 </div> <!--ToDo: проброс из js-->
     </div>
-    <img class="" src="static/img/favorites_tabbar.svg" alt="favorites_tabbar">
+    <div class="favorites-tabbar">
+      <img class="" src="static/img/favorites_tabbar.svg" alt="favorites_tabbar">
+      <div class="header-cart__notification br-16 bg-orange color-white f-10 fw-700 lh-18 ta-center display-none" id="js-favorites-tabbar-notification"></div> <!--ToDo: проброс из js-->
+    </div>
     <img class="" src="static/img/profile_tabbar.svg" alt="profile_tabbar">
   </div>
 </div>

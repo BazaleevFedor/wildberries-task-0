@@ -59,7 +59,6 @@ html, body {
   height: 16px;
   width: 16px;
 
-  display: inline-flex;
   justify-content: center;
   align-items: center;
 
@@ -112,15 +111,44 @@ html, body {
   grid-template-columns: max-content max-content;
   gap: 6px;
 
+  position: relative;
+
   margin-top: 4px;
+}
+.provider-info__table {
+  display: none;
+}
+.provider-info__icon:hover + .provider-info__table {
+  display: grid;
+  gap: 8px;
+  padding: 11px 16px 13px 16px;
+  width: 280px;
+
+  position: absolute;
+  top: 100%;
+  left: 0;
+
+  z-index: 1;
+
+  border-radius: 8px;
+  background: #FFF;
+  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.30), 0 2px 10px 0 rgba(0, 0, 0, 0.15);
 }
 .product-counter {
   display: grid;
   grid-template-columns: 28% 1fr 28%;
 }
-.product-counter__block {
-  color: rgba(0, 0, 0, 0.20);
+.product-container {
+  min-height: 0;
+
+  transition: height 1s ease-in-out;
+  overflow: hidden;
 }
+button:disabled {
+  color: rgba(0, 0, 0, 0.20);
+  cursor: auto;
+}
+
 .product__checkbox {
   grid-column: 1;
   margin-top: 37.5px;
@@ -149,9 +177,7 @@ html, body {
 .product-management {
   display: flex;
   gap: 16px;
-  /*margin-left: auto;*/
 }
-
 .missing-products .product-management {
   margin-left: auto;
 }
@@ -209,12 +235,16 @@ html, body {
   display: grid;
 }
 .item-info__price {
+  position: relative;
+
   grid-template-columns: max-content max-content;
   gap: 5px;
 
   margin-bottom: 2px;
 }
 .item-counter__price {
+  position: relative;
+
   grid-template-rows: max-content max-content;
   gap: 5px;
 
@@ -225,6 +255,24 @@ html, body {
 .price_discount {
   position: relative;
 }
+.discount-info {
+  display: none;
+}
+.price_discount:hover + .discount-info {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  grid-template-rows: max-content max-content;
+  gap: 8px;
+  padding: 11px 16px 13px 16px;
+
+  position: absolute;
+  z-index: 1;
+
+  border-radius: 8px;
+  background: #FFF;
+  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.30), 0 2px 10px 0 rgba(0, 0, 0, 0.15);
+}
+
 .specifications__name {
   margin-bottom: 8px;
   max-width: 275px;
@@ -304,5 +352,8 @@ html, body {
 
 /*tabbar*/
 .cart-tabbar {
+  position: relative;
+}
+.favorites-tabbar {
   position: relative;
 }

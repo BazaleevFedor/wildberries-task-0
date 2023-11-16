@@ -1,14 +1,14 @@
 export const cart = {
-  products: {
-    chooseAll: true,
-    userDiscount: {
-      text: '10%',
-      number: 0.1,
-    },
-    currency: 'com',
-    productList: [
-      {
-        id: 1,
+  currency: 'сом',
+  chooseAll: true,
+  favorites: new Map(),
+  userDiscount: {
+    text: '10%',
+    number: 0.1,
+  },
+  productList: new Map([
+      ['1', {
+        id: '1',
         name: 'Футболка UZcotton мужская',
         image: 'backend_data/1.png',
         isChoose: true,
@@ -19,6 +19,7 @@ export const cart = {
         provider: 'Коледино WB',
         providerDetails: {
           name: 'OOO Вайлдберриз',
+          fullName: 'OOO «ВАЙЛДБЕРРИЗ»',
           number: 'ОГРН: 1067746062449',
           address: '142181, Московская Область, Подольск, Д Коледино, Д. 6 СТР. 1',
         },
@@ -30,9 +31,9 @@ export const cart = {
         },
         leftInStock: 2,
         isFavorites: false,
-      },
-      {
-        id: 2,
+      }],
+      ['2', {
+        id: '2',
         name: 'Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple iPhone XR, MobiSafe',
         image: 'backend_data/2.png',
         isChoose: true,
@@ -42,6 +43,7 @@ export const cart = {
         provider: 'Коледино WB',
         providerDetails: {
           name: 'OOO Мегапрофстиль',
+          fullName: 'OOO «МЕГАПРОФСТИЛЬ»',
           number: 'ОГРН: 5167746237148',
           address: '129337, Москва, улица Красная Сосна, 2, корпус 1, стр. 1, помещение 2, офис 34',
         },
@@ -53,16 +55,17 @@ export const cart = {
         },
         leftInStock: null,
         isFavorites: false,
-      },
-      {
-        id: 3,
+      }],
+      ['3', {
+        id: '3',
         name: 'Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные,       Faber-Castell',
         image: 'backend_data/3.png',
-        isChoose: false,
+        isChoose: true,
         props: [],
         provider: 'Коледино WB',
         providerDetails: {
           name: 'OOO Вайлдберриз',
+          fullName: 'OOO «ВАЙЛДБЕРРИЗ»',
           number: 'ОГРН: 1067746062449',
           address: '142181, Московская Область, Подольск, Д Коледино, Д. 6 СТР. 1',
         },
@@ -74,11 +77,10 @@ export const cart = {
         },
         leftInStock: 2,
         isFavorites: false,
-      },
-    ],
-  },
-  missingProducts: [
-    {
+      }]
+    ]),
+  missingProductsList: new Map([
+    ['1', {
       id: 1,
       name: 'Футболка UZcotton мужская',
       image: 'backend_data/1.png',
@@ -87,8 +89,8 @@ export const cart = {
         {name: 'Размер', value: '56'},
       ],
       isFavorites: false,
-    },
-    {
+    }],
+    ['2', {
       id: 2,
       name: 'Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple iPhone XR, MobiSafe',
       image: 'backend_data/2.png',
@@ -96,16 +98,16 @@ export const cart = {
         {name: 'Цвет', value: 'прозрачный'},
       ],
       isFavorites: false,
-    },
-    {
+    }],
+    ['3', {
       id: 3,
       name: 'Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные,       Faber-Castell',
       image: 'backend_data/3.png',
       isChoose: true,
       props: [],
       isFavorites: false,
-    },
-  ],
+    }],
+  ]),
   delivery: {
     type: 'Пункт выдачи',
     address: 'Бишкек, улица Ахматбека Суюмбаева, 12/1',
