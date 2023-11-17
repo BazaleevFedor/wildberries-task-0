@@ -52,15 +52,15 @@ class MissingProductItem {
           <div class="item-counter p-t-9">
             <div class="counter p-t-9">
               <div class="product-management m-vertical-auto"> <!--ToDo: проброс из js-->
-                <label class="label-checkbox"> <!--ToDo: проброс из js-->
-                  <input type="checkbox" class="checkbox js-missing-product-favorites" data-id="${product.id}" id="js-missing-product-favorites-${product.id}">
+                <label class="label-checkbox pointer"> <!--ToDo: проброс из js-->
+                  <input type="checkbox" class="checkbox js-missing-product-favorites default-hover" data-id="${product.id}" id="js-missing-product-favorites-${product.id}">
                   <div class="checkbox-images">
                     <img class="m-auto img1" src="static/img/favorites.svg" alt="favorites">
                     <img class="m-auto img2" src="static/img/favorites_choose.svg" alt="favorites_choose">
                   </div>
                 </label>
-                <label class="label-checkbox"> <!--ToDo: проброс из js-->
-                  <input type="checkbox" class="checkbox missing-trash-checkbox" data-id="${product.id}">
+                <label class="label-checkbox pointer"> <!--ToDo: проброс из js-->
+                  <input type="checkbox" class="checkbox missing-trash-checkbox default-hover" data-id="${product.id}">
                   <div class="checkbox-images">
                     <img class="m-auto img1" src="static/img/trash.svg" alt="trash">
                     <img class="m-auto img2" src="static/img/trash_choose.svg" alt="trash_choose">

@@ -44,35 +44,38 @@
       <span class="cart__title ff-Bold f-28 f-normal fw-700 lh-36 ls--0-28px">Корзина</span>
       <div class="grid-40">
         <div class="products">
-          <div class="products-choose_all center">
-            <label class="label-checkbox">
-              <input type="checkbox" class="checkbox opacity-hover" checked id="js-choose-all">
+          <div class="products-choose_all center" id="js-products-choose_all">
+            <label class="label-checkbox pointer choose">
+              <input type="checkbox" class="checkbox opacity-hover" checked id="js-choose-all-checkbox">
               <div class="checkbox-images">
                 <img class="m-auto img1" src="static/img/checkbox.svg" alt="checkbox">
                 <img class="m-auto img2" src="static/img/checkbox_choose.svg" alt="checkbox_choose">
               </div>
             </label>
-            <span class="f-16 f-normal fw-400 lh-24 vertical-center">Выбрать все</span>
-            <button class="br-none p-0 center bg-inherit" id="js-toggle-products">
+            <span class="f-16 f-normal fw-400 lh-24 vertical-center w-100 choose">Выбрать все</span>
+            <span class="f-16 f-normal ff-SemiBold fw-400 lh-24 vertical-center w-100 not-choose" id="js-product-count-price"></span>
+            <button class="br-none pointer p-0 center bg-inherit rotate" id="js-toggle-products">
               <img class="" src="static/img/hide.svg" alt="hide">
             </button>
-            <div class="products__line"></div>
           </div>
+          <div class="products__line"></div>
           <div class="grid-20 product-container" id="js-products-container">
 
           </div>
         </div>
         <div class="missing-products">
           <div class="missing-products_count center">
-            <span class="f-16 f-normal fw-400 lh-24 vertical-center">Отсутствуют · 3 товара</span>
-            <img class="" src="static/img/hide.svg" alt="hide">
-            <div class="products__line"></div>
+            <span class="f-16 f-normal ff-SemiBold fw-400 lh-24 vertical-center" id="js-missing-product-count">Отсутствуют · 3 товара</span>
+            <button class="br-none p-0 center bg-inherit rotate pointer" id="js-toggle-missing-products">
+              <img class="" src="static/img/hide.svg" alt="hide">
+            </button>
           </div>
-          <div class="grid-20" id="js-missing-products-container">
+          <div class="products__line"></div>
+          <div class="grid-20 missing-products-container" id="js-missing-products-container">
 
           </div>
         </div>
-        <div style="display: none" class="order-details">
+        <div class="order-details">
           <div class="grid-16">
             <div class="bg-white br-16 p-16-24-24-24 grid-16">
               <div class="delivery-type grid-1fr-min grid-10">

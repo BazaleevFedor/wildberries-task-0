@@ -76,14 +76,28 @@ html, body {
   display: grid;
   gap: 27px;
 }
-.products-choose_all {
-  display: grid;
-  grid-template-columns: min-content 1fr min-content;
-  grid-column-gap: 11px;
-  grid-row-gap: 16px;
+.products-choose_all button {
+  margin-left: 11px;
 }
+
+.products-choose_all label {
+  margin-right: 11px;
+}
+
+.products-choose_all.choose .choose {
+  display: none;
+}
+
+.products-choose_all .not-choose {
+  display: none;
+}
+
+.products-choose_all.choose .not-choose {
+  display: block;
+}
+
 .products__line {
-  grid-column: 1/4;
+  margin-top: 16px;
   height: 1px;
   background: rgba(0, 0, 0, 0.10);
 }
@@ -128,7 +142,7 @@ html, body {
   top: 100%;
   left: 0;
 
-  z-index: 1;
+  z-index: 100;
 
   border-radius: 8px;
   background: #FFF;
@@ -139,10 +153,10 @@ html, body {
   grid-template-columns: 28% 1fr 28%;
 }
 .product-container {
-  min-height: 0;
-
-  transition: height 1s ease-in-out;
-  overflow: hidden;
+  transition: height 0.5s ease-in-out;
+}
+.missing-products-container {
+  transition: height 0.5s ease-in-out;
 }
 button:disabled {
   color: rgba(0, 0, 0, 0.20);
@@ -266,7 +280,7 @@ button:disabled {
   padding: 11px 16px 13px 16px;
 
   position: absolute;
-  z-index: 1;
+  z-index: 100;
 
   border-radius: 8px;
   background: #FFF;

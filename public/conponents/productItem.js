@@ -32,7 +32,6 @@ class ProductItem {
     return {size, props};
   }
 
-
   setPrice(id, price, discount) {
     const priceElem = document.getElementById(`js-product-price-${id}`);
     const priceSmallElem = document.getElementById(`js-product-price-small-${id}`);
@@ -99,7 +98,7 @@ class ProductItem {
       `
         <div class="product__item" data-id="${product.id}">
           <div class="item-info p-t-12">
-            <label class="item-info__checkbox large_components">
+            <label class="item-info__checkbox large_components pointer">
               <input type="checkbox" class="checkbox js-product-checkbox opacity-hover" id="js-product-checkbox-${product.id}" data-id="${product.id}">
               <div class="checkbox-images">
                 <img class="m-auto img1" src="static/img/checkbox.svg" alt="checkbox">
@@ -109,7 +108,7 @@ class ProductItem {
             <div class="image-block">
               <img class="image-block__image br-8" alt="product_img" src="${product.image}"">
               ${size}
-              <label class="image-block__checkbox bg-white br-8 small_components">
+              <label class="image-block__checkbox bg-white br-8 small_components pointer">
                 <input type="checkbox" class="checkbox js-product-checkbox opacity-hover" id="js-product-checkbox-small-${product.id}" data-id="${product.id}">
                 <div class="checkbox-images">
                   <img class="m-auto img1" src="static/img/checkbox.svg" alt="checkbox">
@@ -120,7 +119,7 @@ class ProductItem {
             <div class="item-info__specifications h-max-content">
               <div class="item-info__price small_components">
                 <span class="ff-Bold fw-700 lh-24 f-normal f-16" id="js-product-price-small-${product.id}"></span> <!--ToDo: проброс из js-->
-                <div class="price_discount fw-400 f-13 lh-16 color-gray underline underline-gray m-auto"> <!--ToDo: проброс из js-->
+                <div class="price_discount fw-400 f-13 lh-16 color-gray underline underline-gray m-auto pointer"> <!--ToDo: проброс из js-->
                   <span class="cross-out" id="js-product-price-without-discount-small-${product.id}"></span> <!--ToDo: проброс из js-->
                 </div>
                 <div class="discount-info f-13 f-normal fw-400 lh-16">
@@ -135,7 +134,7 @@ class ProductItem {
               <span class="f-13 lh-16 color-gray">${product.provider}</span> <!--ToDo: проброс из js-->
               <div class="specifications__provider-info large_components">
                 <span class="f-13 lh-16 color-gray">${product.providerDetails.name}</span> <!--ToDo: проброс из js-->
-                <button class="provider-info__icon br-none p-0 vertical-center bg-inherit">
+                <button class="provider-info__icon br-none p-0 vertical-center bg-inherit pointer">
                   <img class="vertical-center" src="static/img/icon-16.svg" alt="info">
                 </button>
                 <div class="provider-info__table f-13 f-normal lh-16">
@@ -159,14 +158,14 @@ class ProductItem {
               </div>
               <span class="product-in-stock f-13 f-normal fw-400 lh-16 color-red m-vertical-auto" id="js-product-stock-${product.id}"></span> <!--ToDo: проброс из js-->
               <div class="product-management m-vertical-auto"> 
-                <label class="label-checkbox"> <!--ToDo: проброс из js-->
+                <label class="label-checkbox pointer"> <!--ToDo: проброс из js-->
                   <input type="checkbox" class="checkbox js-product-favorites default-hover" data-id="${product.id}" id="js-product-favorites-${product.id}">
                   <div class="checkbox-images">
                     <img class="m-auto img1" src="static/img/favorites.svg" alt="favorites">
                     <img class="m-auto img2" src="static/img/favorites_choose.svg" alt="favorites_choose">
                   </div>
                 </label>
-                <label class="label-checkbox"> <!--ToDo: проброс из js-->
+                <label class="label-checkbox pointer"> <!--ToDo: проброс из js-->
                   <input type="checkbox" class="checkbox trash-checkbox default-hover" data-id="${product.id}">
                   <div class="checkbox-images">
                     <img class="m-auto img1" src="static/img/trash.svg" alt="trash">
@@ -177,7 +176,7 @@ class ProductItem {
             </div>
             <div class="item-counter__price large_components">
               <span class="ff-Bold fw-700 lh-24 f-normal f-16" id="js-product-price-${product.id}"></span> <!--ToDo: проброс из js-->
-              <div class="price_discount fw-400 f-13 lh-16 color-gray underline underline-gray m-l-auto">
+              <div class="price_discount fw-400 f-13 lh-16 color-gray underline underline-gray m-l-auto pointer">
                 <span class="cross-out" id="js-product-price-without-discount-${product.id}"></span> <!--ToDo: проброс из js-->
               </div>
               <div class="discount-info f-13 f-normal fw-400 lh-16">

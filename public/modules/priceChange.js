@@ -1,5 +1,8 @@
 import {cart} from "../backend_data/cart_data.js";
 
+/**
+ *
+ */
 export default class PriceChange {
   timer;
   constructor() {

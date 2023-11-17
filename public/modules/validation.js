@@ -13,6 +13,22 @@ class Validation {
 
     return newCount;
   }
+
+  surname() {
+
+  }
+
+  forename() {
+
+  }
+
+  email() {
+
+  }
+
+  phone() {
+
+  }
 }
 
 export default new Validation();

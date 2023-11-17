@@ -293,3 +293,15 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+.rotate-180 {
+  transform: rotate(180deg);
+}
+
+.rotate {
+  transition: transform 0.5s ease;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
