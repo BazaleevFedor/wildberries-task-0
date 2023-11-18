@@ -3,6 +3,7 @@
   --magenta: #CB11AB;
   --violet: #6725A8;
   --smoky: #F6F6FA;
+  --smoky-dark: #F0ECF4;
   --white: #FFFFFF;
   --black: #000000;
   --deep-orange: #FF970D;
@@ -26,6 +27,10 @@
 
 .bg-smoky {
   background-color: var(--smoky, #F6F6FA);
+}
+
+.bg-smoky-dark {
+  background: var(--smoky-dark, #F0ECF4);
 }
 
 .bg-white {
@@ -66,6 +71,10 @@
 
 .color-gray {
   color: var(--gray, #9797AF);
+}
+
+.color-orange {
+  color: var(--orange, #F55123);
 }
 
 .color-magenta {

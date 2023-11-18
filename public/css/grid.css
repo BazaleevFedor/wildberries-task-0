@@ -1,3 +1,7 @@
+.grid {
+  display: grid;
+}
+
 .grid-1 {
   display: grid;
   gap: 1px;

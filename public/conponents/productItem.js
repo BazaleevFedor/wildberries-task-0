@@ -68,17 +68,15 @@ class ProductItem {
     const decElem = document.getElementById(`js-product-counter-dec-${id}`);
     const incElem = document.getElementById(`js-product-counter-inc-${id}`);
 
-    if (count > 0 && (!leftInStock || count <= leftInStock)) {
-      countElem.value = count;
-      incElem.disabled = leftInStock && count >= leftInStock;
-      decElem.disabled = count <= 1;
+    countElem.value = count;
+    incElem.disabled = leftInStock && count >= leftInStock;
+    decElem.disabled = count <= 1;
 
-      let product = cart.productList.get(id);
-      product.count = count;
-      cart.productList.set(id, product);
+    let product = cart.productList.get(id);
+    product.count = count;
+    cart.productList.set(id, product);
 
-      this.setPrice(id, Math.round(product.price * (1 - product.discount.number - cart.userDiscount.number) * product.count), product.price * product.count);
-    }
+    this.setPrice(id, Math.round(product.price * (1 - product.discount.number - cart.userDiscount.number) * product.count), product.price * product.count);
   }
 
   removeItem(id) {

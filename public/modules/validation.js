@@ -15,19 +15,23 @@ class Validation {
   }
 
   surname() {
-
+    return true;
   }
 
   forename() {
-
+    return true;
   }
 
   email() {
-
+    return true;
   }
 
   phone() {
+    return true;
+  }
 
+  inn() {
+    return true;
   }
 }
 

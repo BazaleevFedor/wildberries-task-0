@@ -78,6 +78,18 @@
   margin-bottom: 4px;
 }
 
+.mb-8 {
+  margin-bottom: 8px;
+}
+
+.mb-12 {
+  margin-bottom: 12px;
+}
+
+.mb-16 {
+  margin-bottom: 16px;
+}
+
 .p-1-0-7-0 {
   padding: 1px 0 7px 0;
 }
@@ -304,4 +316,7 @@
 
 .overflow-hidden {
   overflow: hidden;
+}
+.visibility {
+  visibility: hidden;
 }

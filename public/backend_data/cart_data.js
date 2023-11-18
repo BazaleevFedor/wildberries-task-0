@@ -29,6 +29,9 @@ export const cart = {
           text: '55%',
           number: 0.55,
         },
+        delivery: [
+          {date: '5—6 февраля', maxCount: 2},
+        ],
         leftInStock: 2,
         isFavorites: false,
       }],
@@ -53,6 +56,12 @@ export const cart = {
           text: '55%',
           number: 0.55,
         },
+        delivery: [
+          {date: '5—6 февраля', maxCount: 184},
+          {date: '7—8 февраля', maxCount: 97},
+          {date: '9—10 февраля', maxCount: 115},
+          {date: '11—12 февраля', maxCount: Infinity},
+        ],
         leftInStock: null,
         isFavorites: false,
       }],
@@ -75,6 +84,9 @@ export const cart = {
           text: '55%',
           number: 0.55,
         },
+        delivery: [
+          {date: '5—6 февраля', maxCount: 2},
+        ],
         leftInStock: 2,
         isFavorites: false,
       }]
@@ -109,15 +121,19 @@ export const cart = {
     }],
   ]),
   delivery: {
+    type: [
+      {shortText: 'Пункт выдачи', text: 'Доставка в пункт выдачи'},
+      {shortText: 'Доставит курьер', text: 'Доставит курьер'}
+    ],
     points: [
-      {address: 'г. Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 67/1', starts: '4.99', time: 'Ежедневно с 10 до 21'},
-      {address: 'г. Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 67/1', starts: '4.99', time: 'Ежедневно с 10 до 21'},
-      {address: 'г. Бишкек, улица Табышалиева, д. 57', starts: '4.99', time: 'Ежедневно с 10 до 21'},
+      {address: 'г. Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 67/1', rating: '4.99', time: 'Ежедневно с 10 до 21'},
+      {address: 'г. Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 67/1', rating: '4.99', time: 'Ежедневно с 10 до 21'},
+      {address: 'г. Бишкек, улица Табышалиева, д. 57', rating: '4.99', time: 'Ежедневно с 10 до 21'},
     ],
     address: ['Бишкек, улица Табышалиева, 57', 'Бишкек, улица Жукеева-Пудовкина, 77/1', 'Бишкек, микрорайон Джал, улица Ахунбаева Исы, 67/1'],
     price: 'Бесплатно',
   },
-  pay: [
+  cardInfo: [
     {card: '1234 56•• •••• 1234', date: '01/30', bankImage: 'static/img/mir.svg'},
     {card: '2345 67•• •••• 2345', date: '02/29', bankImage: 'static/img/visa.svg'},
     {card: '3456 78•• •••• 3456', date: '03/31', bankImage: 'static/img/mastercard.svg'},

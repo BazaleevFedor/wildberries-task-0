@@ -69,14 +69,10 @@ class Cart {
     const chooseElems = document.getElementsByClassName('js-product-checkbox');
     const toggleElem = document.getElementById('js-toggle-products');
     const missingToggleElem = document.getElementById('js-toggle-missing-products');
-    const productsElem = document.getElementById('js-products-container');
-    const missingProductsElem = document.getElementById('js-missing-products-container');
 
     Array.from(trashElems).forEach((elem) => {
       elem.addEventListener('click', () => {
         const productId = elem.getAttribute('data-id');
-        const product = document.querySelector(`.product__item[data-id="${productId}"]`);
-        productsElem.style.height = productsElem.scrollHeight - product.offsetHeight + 'px';
 
         this._removeProduct('product', productId);
       });
@@ -85,18 +81,17 @@ class Cart {
     Array.from(missingTrashElems).forEach((elem) => {
       elem.addEventListener('click', () => {
         const productId = elem.getAttribute('data-id');
-        const product = document.querySelector(`.missing-product__item[data-id="${productId}"]`);
-        missingProductsElem.style.height = missingProductsElem.scrollHeight - product.offsetHeight + 'px';
 
-        this._removeProduct('missing', elem.getAttribute('data-id'))
+        this._removeProduct('missing', productId)
       });
     });
 
     Array.from(counterIncElems).forEach((elem) => {
       elem.addEventListener('click', () => {
         const product = cart.productList.get(elem.getAttribute('data-id'));
+        let newCount = Validation.counter(product.count + 1, product.leftInStock, product.count);
 
-        productItem.setCount(product.id, product.count + 1, product.leftInStock);
+        productItem.setCount(product.id, newCount, product.leftInStock);
         OrderSummary.refreshPrice();
       });
     });
@@ -104,8 +99,9 @@ class Cart {
     Array.from(counterDecElems).forEach((elem) => {
       elem.addEventListener('click', () => {
         const product = cart.productList.get(elem.getAttribute('data-id'));
+        let newCount = Validation.counter(product.count - 1, product.leftInStock, product.count);
 
-        productItem.setCount(product.id, product.count - 1, product.leftInStock);
+        productItem.setCount(product.id, newCount, product.leftInStock);
         OrderSummary.refreshPrice();
       });
     });
@@ -145,44 +141,33 @@ class Cart {
     });
 
     let isClick = false;
-    productsElem.style.height = productsElem.scrollHeight + 'px';
-    missingProductsElem.style.height = missingProductsElem.scrollHeight + 'px';
-    toggleElem?.addEventListener('click', () => {
+    const productsHideElem = document.getElementById('js-hidden-block-products');
+    const missingProductsHideElem = document.getElementById('js-hidden-block-products-missing');
+
+    const hide = (elem, toggle, isChooseAll = false) => {
       if (!isClick) {
         this._refreshProductCount();
         isClick = true;
-        toggleElem.classList.toggle('rotate-180');
-        chooseAllBlock.classList.toggle('choose');
+        toggle.classList.toggle('rotate-180');
+        if (isChooseAll) chooseAllBlock.classList.toggle('choose');
+        elem.classList.toggle('hidden');
 
-        if (productsElem.style.height && productsElem.style.height === '0px') {
-          productsElem.classList.add('overflow-hidden');
-          productsElem.style.height = productsElem.scrollHeight + 'px';
-          setTimeout(() => productsElem.classList.remove('overflow-hidden'), 500);
+        if (elem.classList.contains('hidden')) {
+          elem.classList.add('overflow-hidden');
         } else {
-          productsElem.classList.add('overflow-hidden');
-          productsElem.style.height = '0px';
+          setTimeout(() => elem.classList.remove('overflow-hidden'), 700);
         }
 
-        setTimeout(() => isClick = false, 500);
+        setTimeout(() => isClick = false, 700);
       }
+    }
+
+    toggleElem?.addEventListener('click', () => {
+      hide(productsHideElem, toggleElem, true);
     });
 
     missingToggleElem?.addEventListener('click', () => {
-      if (!isClick) {
-        isClick = true;
-        missingToggleElem.classList.toggle('rotate-180');
-
-        if (missingProductsElem.style.height && missingProductsElem.style.height === '0px') {
-          missingProductsElem.classList.add('overflow-hidden');
-          missingProductsElem.style.height = missingProductsElem.scrollHeight + 'px';
-          setTimeout(() => missingProductsElem.classList.remove('overflow-hidden'), 500);
-        } else {
-          missingProductsElem.classList.add('overflow-hidden');
-          missingProductsElem.style.height = '0px';
-        }
-
-        setTimeout(() => isClick = false, 500);
-      }
+      hide(missingProductsHideElem, missingToggleElem);
     });
   }
 

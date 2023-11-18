@@ -42,6 +42,16 @@
     top: 100%;
     left: 0;
   }
+  .mb-photo {
+    margin-bottom: 24px;
+  }
+
+  .input-table {
+    display: grid;
+
+    grid-template-rows: repeat(5, 1fr);
+    gap: 16px;
+  }
 }
 
 @media (min-width: 700px) {
@@ -86,11 +96,48 @@
     top: 50px;
     right: -10px;
   }
+
+  .mb-photo {
+    margin-bottom: 16px;
+  }
+
+  .input-table {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr 1fr;
+
+    column-gap: 24px;
+
+    grid-template-areas: "user-forename user-forename user-forename user-surname user-surname user-surname" "user-email user-email user-phone user-phone user-inn user-inn";
+  }
+  .user-forename {
+    grid-area: user-forename;
+  }
+  .user-surname {
+    grid-area: user-surname;
+  }
+  .user-email {
+    grid-area: user-email;
+  }
+  .user-phone {
+    grid-area: user-phone;
+  }
+  .user-inn {
+    grid-area: user-inn;
+  }
 }
 
 @media (max-width: 1000px) {
   .order-summary {
     background-color: var(--smoky, #F6F6FA);
+    display: grid;
+    gap: 16px;
+
+    padding: 8px 16px 0 16px;
+  }
+
+  .return-info-summary {
+    background: var(--smoky-dark, #F0ECF4);
   }
 }
 
@@ -100,6 +147,16 @@
     background: #FFFFFF;
     box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.30), 0 2px 10px 0 rgba(0, 0, 0, 0.15);
     height: max-content;
+
+    display: grid;
+    gap: 24px;
+
+    padding: 16px 24px 24px 24px;
+
+  }
+
+  .return-info-summary {
+    background-color: var(--smoky, #F6F6FA);
   }
 }
 

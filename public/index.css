@@ -152,12 +152,26 @@ html, body {
   display: grid;
   grid-template-columns: 28% 1fr 28%;
 }
-.product-container {
+.hidden-block {
+  display: grid;
+  grid-template-rows: 1fr;
+  transition: 0.7s;
+}
+.hidden-block.hidden {
+  grid-template-rows: 0fr;
+}
+.products-container {
+  min-height: 0;
+}
+
+/*.product-container {
+  grid-template-rows: 1fr;
   transition: height 0.5s ease-in-out;
 }
-.missing-products-container {
+.product-container.overflow-hidden {
+  grid-template-rows: 0fr;
   transition: height 0.5s ease-in-out;
-}
+}*/
 button:disabled {
   color: rgba(0, 0, 0, 0.20);
   cursor: auto;
@@ -334,7 +348,6 @@ button:disabled {
   display: grid;
 
   column-gap: 32px;
-  row-gap: 16px;
 }
 .delivery-table__photo {
   display: flex;
@@ -353,15 +366,36 @@ button:disabled {
   right: -3px;
   top: -4px;
 }
-.user {
-  flex: 1 1 283px; /* flex-grow: 1, flex-shrink: 1, flex-basis: 338px */
-  max-width: 338px;
-  min-width: 283px;
-  box-sizing: border-box; /* Учитываем padding и border внутри размеров блока */
-  width: auto;
-}
 .order-confirm__button {
   height: 44px;
+}
+
+.user-info {
+  display: grid;
+  gap: 16px;
+}
+.user__input-line {
+  margin-top: 3px;
+  margin-bottom: 4px;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.10);
+}
+.user__error {
+  height: 14px;
+}
+.user__label {
+  height: 16px;
+  margin-bottom: 2px;
+}
+.user__input {
+
+}
+.user__input::placeholder {
+  color: var(--gray, #9797AF);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
 }
 
 /*tabbar*/
@@ -370,4 +404,69 @@ button:disabled {
 }
 .favorites-tabbar {
   position: relative;
+}
+.star {
+  margin-right: 4px;
+}
+.star-point {
+  margin-right: 8px;
+}
+.return-info__text {
+  position: relative;
+
+  margin-bottom: auto;
+  margin-top: auto;
+}
+.requisites {
+  display: grid;
+}
+.card-bank {
+  margin-right: 8px;
+  display: grid;
+  height: 24px
+}
+.card-number {
+  margin-right: 12px;
+}
+.info {
+  display: none;
+}
+.info-button:hover + .info {
+  display: grid;
+  gap: 8px;
+  padding: 10px 16px 14px 16px;
+
+  position: absolute;
+
+  top: 100%;
+  z-index: 100;
+
+  border-radius: 8px;
+  background: #FFF;
+  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.30), 0 2px 10px 0 rgba(0, 0, 0, 0.15);
+}
+.right-0 {
+  width: 100%;
+  right: 0;
+}
+.left-50 {
+  width: 288px;
+  left: 50%;
+}
+
+
+.error.user__input {
+  color: var(--orange, #F55123);
+}
+.error.user__input-line {
+  background: #F55123;
+}
+.error.user__error {
+  color: var(--orange, #F55123);
+}
+.error.user__inn {
+  display: none;
+}
+.user__error {
+
 }

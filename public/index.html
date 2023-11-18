@@ -15,8 +15,8 @@
     </button>
     <div class="header__logo large_components ff-Bold f-30 color-white fw-600 lh-24 fv-all-small-caps ls-1-7 p-1-0-7-0">Товары и точка</div>
     <div class="header__search-field large_components br-36 p-0-20 m-4-0 bg-search-input">
-      <label class="center">
-        <input class="search-field__input opacity-0-5 bg-search-input m-auto w-100 f-18 color-white f-normal fw-400 lh-24 h-28 br-none outline-none" placeholder="Я ищу..." >
+      <label class="vertical-center">
+        <input class="search-field__input opacity-0-5 bg-search-input w-100 f-18 color-white f-normal fw-400 lh-24 h-28 br-none outline-none" placeholder="Я ищу..." >
       </label>
       <button class="search bg-search-input br-none p-0">
         <img class="search__icon opacity-0-4" src="static/img/search.svg" alt="search">
@@ -59,9 +59,12 @@
             </button>
           </div>
           <div class="products__line"></div>
-          <div class="grid-20 product-container" id="js-products-container">
+          <div class="hidden-block" id="js-hidden-block-products">
+            <div class="grid-20 products-container" id="js-products-container">
 
+            </div>
           </div>
+
         </div>
         <div class="missing-products">
           <div class="missing-products_count center">
@@ -71,8 +74,10 @@
             </button>
           </div>
           <div class="products__line"></div>
-          <div class="grid-20 missing-products-container" id="js-missing-products-container">
+          <div class="hidden-block" id="js-hidden-block-products-missing">
+            <div class="grid-20 products-container" id="js-missing-products-container">
 
+            </div>
           </div>
         </div>
         <div class="order-details">
@@ -85,79 +90,89 @@
                 </button>
               </div>
               <div class="grid-24">
-                <div class="delivery-table">
-                  <span>Пункт выдачи</span>
-                  <div class="grid-4">
-                    <span style="word-wrap: break-word;">Бишкек, улица Ахматбека Суюмбаева, 12/1</span>
-                    <div>Ежедневно с 10 до 21 </div>
-                  </div>
-                  <span>Стоимость доставки</span>
-                  <span>Бесплатно</span>
-                  <span>5—6 февраля</span>
-                  <div class="delivery-table__photo br-8">
-                    <div class="cart-tabbar">
-                      <img class="delivery-table__pic br-8" src="backend_data/1.png" alt="1">
-<!--                      <div class="delivery__notification br-16 bg-orange color-white f-10 fw-600 lh-18 ta-center"></div> &lt;!&ndash;ToDo: проброс из js&ndash;&gt;-->
-                    </div>
-
-                    <div class="cart-tabbar">
-                      <img class="delivery-table__pic br-8" src="backend_data/2.png" alt="2">
-                      <div class="delivery__notification br-16 bg-orange color-white f-10 fw-600 lh-18 ta-center"> 184 </div> <!--ToDo: проброс из js-->
-                    </div>
-
-                    <div class="cart-tabbar">
-                      <img class="delivery-table__pic br-8" src="backend_data/3.png" alt="3">
-                      <div class="delivery__notification br-16 bg-orange color-white f-10 fw-600 lh-18 ta-center"> 2 </div> <!--ToDo: проброс из js-->
+                <div class="delivery-table f-16 lh-24 f-normal" id="js-delivery-plan">
+                  <span class="fw-600" id="js-delivery-type-order-details">Пункт выдачи</span>
+                  <div class="grid-4 fw-400">
+                    <span style="word-wrap: break-word;" id="js-address-order-details">Бишкек, улица Ахматбека Суюмбаева, 12/1</span>
+                    <div class="f-13 lh-16 mb-16">
+                      <img class="star" src="static/img/star_fill.svg" alt="star" id="js-point-star">
+                      <span class="star-point" id="js-point-rating">4.99</span>
+                      <span id="js-point-time">Ежедневно с 10 до 21 </span>
                     </div>
                   </div>
-                  <span>7—8 февраля</span>
-                  <div class="delivery-table__photo br-8">
-                    <div class="cart-tabbar">
-                      <img class="delivery-table__pic br-8" src="backend_data/2.png" alt="2">
-                      <div class="delivery__notification br-16 bg-orange color-white f-10 fw-600 lh-18 ta-center"> 16 </div> <!--ToDo: проброс из js-->
-                    </div>
-                  </div>
+                  <span class="fw-600">Стоимость доставки</span>
+                  <span class="fw-400 mb-16" id="js-del-mb">Бесплатно</span>
                 </div>
                 <div class="return-info grid-min-1fr grid-8">
                   <img class="m-auto" src="static/img/price_shipping.svg" alt="price_shipping">
-                  <div class="return-info__text f-13 fw-400 lh-16 color-black vertical-center">
-                    Обратная доставка товаров на склад при отказе — 
-                    <span class="color-green underline underline-green">бесплатно</span>
-                  </div>
+                  <span class="return-info__text f-13 fw-400 lh-16 color-black">
+                    <span>Обратная доставка товаров на склад при отказе — </span>
+                    <span class="color-green underline underline-green info-button">бесплатно</span>
+                    <div class="info f-13 f-normal fw-400 lh-16 left-50">
+                      <span>Если товары вам не подойдут, мы вернем их обратно на склад — это бесплатно</span>
+                    </div>
+                  </span>
                 </div>
-              </div>
-            </div>
-            <div class="br-16 bg-white p-16-24-24-24 grid-16">
-              <div class="delivery-type grid-1fr-min grid-10">
-                <span class="ff-Bold f-24 f-normal fw-700 lh-32 ls--0-24px color-black">Способ оплаты</span>
-                <button class="delivery-type__change br-none p-0 center bg-inherit">
-                  <span class="ff-Bold f-16 f-normal fw-700 lh-24 color-magenta">Изменить</span>
-                </button>
-              </div>
-              <div class="grid-8">
-                <div class="requisites grid-min-1fr grid-8">
-                  <div class="br-4 bg-smoky p-0-1" style="display: grid; height: 24px">
-                    <img class="m-auto" style="" src="static/img/mir.svg" alt="mir">
-                  </div>
-                  <span class="requisites__card f-13 fw-400 lh-16 color-black vertical-center">1234 12•• •••• 1234  01/30</span>
-                </div>
-                <span class="f-normal f-13 fw-400 color-gray lh-16">Спишем оплату с карты при получении</span>
               </div>
             </div>
             <div class="br-16 bg-white p-16-24-24-24">
-              <div class="grid-16">
-                <span class="ff-Bold f-24 f-normal fw-700 lh-32 ls--0-24px color-black">Получатель</span>
-                <div style="display: flex; flex-wrap: wrap;">
-                  <div class="user bg-violet">1</div>
-                  <div class="user bg-orange">1</div>
-                </div>
+              <div class="delivery-type grid-1fr-min grid-10 mb-16">
+                <span class="ff-Bold f-24 f-normal fw-700 lh-32 ls--0-24px color-black">Способ оплаты</span>
+                <button class="pay-type__change br-none p-0 center bg-inherit">
+                  <span class="ff-Bold f-16 f-normal fw-700 lh-24 color-magenta">Изменить</span>
+                </button>
               </div>
+              <div class="vertical-center mb-8">
+                <div class="card-bank br-4 bg-smoky p-0-1">
+                  <img class="m-auto" src="static/img/mir.svg" alt="mir"  id="js-card-img">
+                </div>
+                <span class="requisites__card card-number f-13 fw-400 lh-16 color-black vertical-center"  id="js-card-number">1234 12•• •••• 1234</span>
+                <span class="requisites__card f-13 fw-400 lh-16 color-black vertical-center"  id="js-card-date">01/30</span>
+              </div>
+              <span class="f-normal f-13 fw-400 color-gray lh-16">Спишем оплату с карты при получении</span>
+            </div>
+
+            <div class="user-info br-16 bg-white p-16-24-24-24">
+                <span class="ff-Bold f-24 f-normal fw-700 lh-32 ls--0-24px color-black">Получатель</span>
+                <div class="input-table">
+                  <label class="grid user-forename f-normal fw-400" data-id="forename">
+                    <span class="user__label f-13 lh-16 color-gray visibility" id="js-forename-label">Имя</span>
+                    <input class="user__input f-16 lh-24 color-gray p-0 br-none outline-none" placeholder="Имя" id="js-forename-input">
+                    <div class="user__input-line"></div>
+                    <span class="user__error f-12 lh-14 color-orange" id="js-forename-error"></span>
+                  </label>
+                  <label class="grid user-surname f-normal fw-400" data-id="surname">
+                    <span class="user__label f-13 lh-16 color-gray visibility">Фамилия</span>
+                    <input class="user__input f-16 lh-24 color-gray p-0 br-none outline-none" placeholder="Фамилия">
+                    <div class="user__input-line"></div>
+                    <span class="user__error f-12 lh-14 color-orange" id="js-surname-error"></span>
+                  </label>
+                  <label class="grid user-email f-normal fw-400" data-id="email">
+                    <span class="user__label f-13 lh-16 color-gray visibility">Почта</span>
+                    <input class="user__input f-16 lh-24 color-gray p-0 br-none outline-none" placeholder="Почта">
+                    <div class="user__input-line"></div>
+                    <span class="user__error f-12 lh-14 color-orange" id="js-email-error"></span>
+                  </label>
+                  <label class="grid user-phone f-normal fw-400" data-id="phone">
+                    <span class="user__label f-13 lh-16 color-gray visibility">Телефон</span>
+                    <input class="user__input f-16 lh-24 color-gray p-0 br-none outline-none" placeholder="Телефон">
+                    <div class="user__input-line"></div>
+                    <span class="user__error f-12 lh-14 color-orange" id="js-phone-error"></span>
+                  </label>
+                  <label class="grid user-inn f-normal fw-400" data-id="inn">
+                    <span class="user__label f-13 lh-16 color-gray visibility">ИНН</span>
+                    <input class="user__input f-16 lh-24 color-gray p-0 br-none outline-none" placeholder="ИНН">
+                    <div class="user__input-line"></div>
+                    <span class="user__error f-12 lh-14 color-orange" id="js-inn-error"></span>
+                    <span class="user__inn f-12 lh-14 color-black" id="js-inn">Для таможенного оформления</span>
+                  </label>
+                </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="order-summary grid-24 p-16-24-24-24 f-normal ff-Regular">
+    <div class="order-summary f-normal ff-Regular">
       <div class="grid-8 color-black">
         <div class="price text-spacing fw-700">
           <span class="price__title ff-Bold f-24 lh-33 ls--0-24px">Итого</span>
@@ -177,60 +192,61 @@
           </span>
           <span class="text-spacing">
             <span>Доставка</span>
-            <span id="js-delivery-price">Бесплатно</span> <!--ToDo: проброс из js-->
+            <span>Бесплатно</span> <!--ToDo: проброс из js-->
           </span>
         </div>
       </div>
       <div class="delivery grid-12">
-        <div class="delivery-info grid-4 f-16 fw-700 lh-24">
-          <div class="delivery-type grid-1fr-min grid-16">
+        <div class="delivery-info f-16 fw-700 lh-24 large_components">
+          <div class="delivery-type grid-1fr-min grid-16 mb-4">
             <span class="delivery-type__text ff-Bold color-black" id="js-delivery-type">Доставка в пункт выдачи</span> <!--ToDo: проброс из js-->
-            <button class="delivery-type__change br-none p-0 center bg-inherit" id="js-delivery-type-change">
+            <button class="delivery-type__change br-none p-0 center bg-inherit">
               <img src="static/img/change.svg" alt="change">
             </button>
           </div>
-          <span class="delivery-info__address f-13 fw-400 lh-16 color-black" id="js-delivery-address">Бишкек, улица Ахматбека Суюмбаева, 12/1</span> <!--ToDo: проброс из js-->
+          <span class="delivery-info__address f-13 fw-400 lh-16 color-black mb-4" id="js-delivery-address">Бишкек, улица Ахматбека Суюмбаева, 12/1</span> <!--ToDo: проброс из js-->
           <span class="delivery-info__data f-13 fw-400 lh-16 color-magenta underline underline-magenta" id="js-delivery-data">5–8 фев</span> <!--ToDo: проброс из js-->
         </div>
-        <div class="return-info p-8-8-12-8 grid-min-1fr grid-8 bg-smoky br-8">
+        <div class="return-info-summary p-8-8-12-8 grid-min-1fr grid-8 br-8">
           <img class="m-auto" src="static/img/price_shipping.svg" alt="price_shipping">
-          <div class="return-info__text f-13 fw-400 lh-16 color-black">
-            Обратная доставка товаров на склад при отказе — 
-            <span class="color-green underline underline-green">бесплатно</span>
-          </div>
+          <span class="return-info__text f-13 fw-400 lh-16 color-black">
+            <span>Обратная доставка товаров на склад при отказе — </span>
+            <span class="color-green underline underline-green info-button">бесплатно</span>
+            <div class="info f-13 f-normal fw-400 lh-16 right-0">
+              <span>Если товары вам не подойдут, мы вернем их обратно на склад — это бесплатно</span>
+            </div>
+          </span>
         </div>
       </div>
       <div class="pay grid-12">
-        <div class="pay-info grid-4 f-16 fw-700 lh-24">
-          <div class="pay-type grid-1fr-min grid-16">
+        <div class="pay-info f-16 fw-700 lh-24 large_components">
+          <div class="pay-type grid-1fr-min grid-16 mb-4">
             <span class="pay-type__text ff-Bold color-black" id="js-pay-type">Оплата картой</span> <!--ToDo: проброс из js-->
             <button class="pay-type__change br-none p-0 center bg-inherit" id="js-pay-type-change">
               <img src="static/img/change.svg" alt="change">
             </button>
           </div>
-          <div class="requisites grid-min-1fr grid-8">
-            <div class="br-4 bg-smoky p-0-1" style="display: grid; height: 24px">
-              <img class="m-auto" style="" src="static/img/mir.svg" alt="mir">
+          <div class="requisites grid-min-1fr">
+            <div class="card-bank br-4 bg-smoky p-0-1">
+              <img class="m-auto" src="static/img/mir.svg" alt="mir" id="js-card-shot-img">
             </div>
-            <span class="requisites__card f-13 fw-400 lh-16 color-black vertical-center">1234 12•• •••• 1234</span>
+            <span class="requisites__card f-13 fw-400 lh-16 color-black vertical-center" id="js-card-shot-number">1234 12•• •••• 1234</span>
           </div>
         </div>
         <div class="pay-immediately br-8 bg-smoky grid-8 p-8-8-12-8">
-          <div class="pay-immediately-change grid-min-1fr grid-8">
-            <label for="pay-immediately-checkbox">
-              <input type="checkbox" id="pay-immediately-checkbox" class="checkbox opacity-hover">
-              <div class="checkbox-images">
-                <img class="m-auto img1" src="static/img/checkbox.svg" alt="checkbox">
-                <img class="m-auto img2" src="static/img/checkbox_choose.svg" alt="checkbox_choose">
-              </div>
-            </label>
+          <label for="pay-immediately-checkbox" class="pay-immediately-change grid-min-1fr grid-8">
+            <input type="checkbox" id="pay-immediately-checkbox" class="checkbox opacity-hover">
+            <div class="checkbox-images">
+              <img class="m-auto img1" src="static/img/checkbox.svg" alt="checkbox">
+              <img class="m-auto img2" src="static/img/checkbox_choose.svg" alt="checkbox_choose">
+            </div>
             <span class="pay-immediately-change__text f-13 fw-400 lh-16 color-black vertical-center">Списать оплату сразу</span>
-          </div>
+          </label>
           <span class="f-13 fw-400 lh-16 color-black" id="js-pay-immediately-text">Спишем оплату с карты при получении</span> <!--ToDo: проброс из js-->
         </div>
       </div>
       <div class="order-confirm grid-12">
-        <button class="order-confirm__button color-white ff-Bold f-normal f-16 fw-700 lh-24 p-0-32-5-32 br-8 bg-magenta br-none center">Заказать</button>
+        <button class="order-confirm__button color-white ff-Bold f-normal f-16 fw-700 lh-24 p-0-32-5-32 br-8 bg-magenta br-none center" id="js-order-confirm">Заказать</button>
         <div class="grid-min-1fr grid-8">
           <img class="" src="static/img/agreement.svg" alt="agreement">
           <span class="order-confirm____text f-13 fw-400 lh-16 color-black">
