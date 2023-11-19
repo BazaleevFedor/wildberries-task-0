@@ -20,7 +20,12 @@
     <div class="modal-window__choose-card">
 
     </div>
-    <div class="modal-window__choose-address"></div>
+    <div class="modal-window__choose-address">
+      <div class="address__buttons f-13 f-normal fw-700 lh-16">
+        <button class="buttons__point">В пункт выдачи</button>
+        <button class="buttons__courier">Курьером</button>
+      </div>
+    </div>
 
     <div class="modal-window__select">
       <button class="select__button pointer ff-SemiBold color-white br-none br-8 bg-magenta f-16 f-normal fw-700 lh-24" id="js-select">Выбрать</button>
@@ -104,7 +109,7 @@
             <div class="bg-white br-16 p-16-24-24-24 grid-16">
               <div class="delivery-type grid-1fr-min grid-10">
                 <span class="ff-Bold f-24 f-normal fw-700 lh-32 ls--0-24px color-black">Способ доставки</span>
-                <button class="delivery-type__change br-none p-0 center bg-inherit">
+                <button class="delivery-type__change br-none p-0 pointer center bg-inherit">
                   <span class="ff-Bold f-16 f-normal fw-700 lh-24 color-magenta">Изменить</span>
                 </button>
               </div>
@@ -126,7 +131,7 @@
                   <img class="m-auto" src="static/img/price_shipping.svg" alt="price_shipping">
                   <span class="return-info__text f-13 fw-400 lh-16 color-black">
                     <span>Обратная доставка товаров на склад при отказе — </span>
-                    <span class="color-green underline underline-green info-button">бесплатно</span>
+                    <span class="color-green underline underline-green pointer info-button">бесплатно</span>
                     <div class="info f-13 f-normal fw-400 lh-16 left-50">
                       <span>Если товары вам не подойдут, мы вернем их обратно на склад — это бесплатно</span>
                     </div>
@@ -137,7 +142,7 @@
             <div class="br-16 bg-white p-16-24-24-24">
               <div class="delivery-type grid-1fr-min grid-10 mb-16">
                 <span class="ff-Bold f-24 f-normal fw-700 lh-32 ls--0-24px color-black">Способ оплаты</span>
-                <button class="pay-type__change br-none p-0 center bg-inherit">
+                <button class="pay-type__change br-none p-0 center bg-inherit pointer">
                   <span class="ff-Bold f-16 f-normal fw-700 lh-24 color-magenta">Изменить</span>
                 </button>
               </div>
@@ -219,7 +224,7 @@
         <div class="delivery-info f-16 fw-700 lh-24 large_components">
           <div class="delivery-type grid-1fr-min grid-16 mb-4">
             <span class="delivery-type__text ff-Bold color-black" id="js-delivery-type">Доставка в пункт выдачи</span> <!--ToDo: проброс из js-->
-            <button class="delivery-type__change br-none p-0 center bg-inherit">
+            <button class="delivery-type__change pointer br-none p-0 center bg-inherit">
               <img src="static/img/change.svg" alt="change">
             </button>
           </div>
@@ -230,7 +235,7 @@
           <img class="m-auto" src="static/img/price_shipping.svg" alt="price_shipping">
           <span class="return-info__text f-13 fw-400 lh-16 color-black">
             <span>Обратная доставка товаров на склад при отказе — </span>
-            <span class="color-green underline underline-green info-button">бесплатно</span>
+            <span class="color-green underline underline-green pointer info-button">бесплатно</span>
             <div class="info f-13 f-normal fw-400 lh-16 right-0">
               <span>Если товары вам не подойдут, мы вернем их обратно на склад — это бесплатно</span>
             </div>
@@ -241,7 +246,7 @@
         <div class="pay-info f-16 fw-700 lh-24 large_components">
           <div class="pay-type grid-1fr-min grid-16 mb-4">
             <span class="pay-type__text ff-Bold color-black" id="js-pay-type">Оплата картой</span> <!--ToDo: проброс из js-->
-            <button class="pay-type__change br-none p-0 center bg-inherit" id="js-pay-type-change">
+            <button class="pay-type__change br-none p-0 center pointer bg-inherit" id="js-pay-type-change">
               <img src="static/img/change.svg" alt="change">
             </button>
           </div>
@@ -253,13 +258,13 @@
           </div>
         </div>
         <div class="pay-immediately br-8 bg-smoky grid-8 p-8-8-12-8">
-          <label for="pay-immediately-checkbox" class="pay-immediately-change grid-min-1fr grid-8">
-            <input type="checkbox" id="pay-immediately-checkbox" class="checkbox opacity-hover">
+          <label class="pay-immediately-change grid-min-1fr grid-8 pointer">
+            <input type="checkbox" class="checkbox opacity-hover">
             <div class="checkbox-images">
               <img class="m-auto img1" src="static/img/checkbox.svg" alt="checkbox">
               <img class="m-auto img2" src="static/img/checkbox_choose.svg" alt="checkbox_choose">
             </div>
-            <span class="pay-immediately-change__text pointer f-13 fw-400 lh-16 color-black vertical-center">Списать оплату сразу</span>
+            <span class="pay-immediately-change__text f-13 fw-400 lh-16 color-black vertical-center">Списать оплату сразу</span>
           </label>
           <span class="f-13 fw-400 lh-16 color-black" id="js-pay-immediately-text">Спишем оплату с карты при получении</span> <!--ToDo: проброс из js-->
         </div>

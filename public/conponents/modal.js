@@ -20,6 +20,7 @@ class Modal {
       modalWindowElems.classList.add('display-none');
       modalWindowElems.classList.remove('card');
       modalWindowElems.classList.remove('address');
+      document.body.classList.remove('overflow-hidden');
     }
 
     modalBackground?.addEventListener('click', (event) => {
@@ -49,6 +50,7 @@ class Modal {
       elem?.addEventListener('click', () => {
         modalWindowElems.classList.remove('display-none');
         modalWindowElems.classList.add('card');
+        document.body.classList.add('overflow-hidden');
       });
     });
 
@@ -56,6 +58,7 @@ class Modal {
       elem?.addEventListener('click', () => {
         modalWindowElems.classList.remove('display-none');
         modalWindowElems.classList.add('address');
+        document.body.classList.add('overflow-hidden');
       });
     });
   }
