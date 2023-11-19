@@ -1,60 +1,91 @@
 import {cart} from "../backend_data/cart_data.js";
 import orderSummary from "./orderSummary.js";
+import Validation from "../modules/validation.js";
 
 class OrderDetails {
   constructor() {
     this.addListeners();
   }
 
-  addListeners() {
-    const forenameLabelElem = document.getElementById('js-forename-label');
-    const forenameInputElem = document.getElementById('js-forename-input');
-    const forenameErrorElem = document.getElementById('js-forename-error');
+  validateAllFields() {
+    const inputElems = document.getElementsByClassName('user__input');
+    let result = true;
 
-    const surnameLabelElem = document.getElementById('js-surname-label');
-    const surnameInputElem = document.getElementById('js-surname-input');
-    const surnameErrorElem = document.getElementById('js-surname-error');
-
-    const emailLabelElem = document.getElementById('js-email-label');
-    const emailInputElem = document.getElementById('js-email-input');
-    const emailErrorElem = document.getElementById('js-email-error');
-
-    const phoneLabelElem = document.getElementById('js-phone-label');
-    const phoneInputElem = document.getElementById('js-phone-input');
-    const phoneErrorElem = document.getElementById('js-phone-error');
-
-    const innLabelElem = document.getElementById('js-inn-label');
-    const innInputElem = document.getElementById('js-inn-input');
-    const innErrorElem = document.getElementById('js-inn-error');
-    const innTextElem = document.getElementById('js-inn');
-
-    const userInfoValidate = (labelElem, inputElem, errorElem, text, innTextElem = null) => {
-      if (text) {
-        labelElem.classList.remove('visibility');
-      } else {
-        labelElem.classList.add('visibility');
-        errorElem.classList.add('visibility');
+    Array.from(inputElems).forEach((elem) => {
+      if (!this._validateField(elem)) {
+        result = false;
       }
+    });
+
+    return result;
+  }
+
+  _validateField = (field) => {
+    const parentElem = field.parentNode;
+    const text = field.value;
+    const fieldType = parentElem.getAttribute('data-id');
+    const errorElem = parentElem.querySelector('.user__error');
+
+    const {isCorrect, errorText} = Validation[fieldType](text);
+    if (isCorrect) {
+      parentElem.classList.remove('error');
+      return true;
+    } else {
+      parentElem.classList.add('error');
+      errorElem.innerHTML = errorText;
+      return false;
     }
+  }
 
-    forenameInputElem?.addEventListener('input', (event) => {
-      userInfoValidate(, event.target.value);
+  addListeners() {
+    const inputElems = document.getElementsByClassName('user__input');
+    const phoneInputElems = document.getElementById('js-phone-input');
+
+    Array.from(inputElems).forEach((elem) => {
+      elem.addEventListener('change', (event) => {
+        if (event.target.value) {
+          this._validateField(elem);
+        }
+      });
     });
 
-    surnameInputElem?.addEventListener('input', (event) => {
-      userInfoValidate(surnameLabelElem, surnameInputElem, surnameErrorElem, event.target.value);
+    Array.from(inputElems).forEach((elem) => {
+      elem.addEventListener('input', (event) => {
+        const parentElem = elem.parentNode;
+        if (event.target.value) {
+          parentElem.querySelector('.user__label').classList.remove('visibility');
+        } else {
+          parentElem.classList.remove('error');
+          parentElem.querySelector('.user__label').classList.add('visibility');
+        }
+      });
     });
 
-    emailInputElem?.addEventListener('input', (event) => {
-      userInfoValidate(emailLabelElem, emailInputElem, emailErrorElem, event.target.value);
-    });
-
-    phoneInputElem?.addEventListener('input', (event) => {
-      userInfoValidate(phoneLabelElem, phoneInputElem, phoneErrorElem, event.target.value);
-    });
-
-    innInputElem?.addEventListener('input', (event) => {
-      userInfoValidate(innLabelElem, innInputElem, innErrorElem, event.target.value, innTextElem);
+    let last;
+    phoneInputElems?.addEventListener('input', (event) => {
+      if (!last || last.slice(0, -1) !== event.target.value) {
+        let input = event.target.value.replace(/[()-]/g, ' ');
+        if (input === '8') {
+          phoneInputElems.value = '+7 ';
+        } else if (/^\d$/.test(input)) {
+          phoneInputElems.value = '+' + input + ' ';
+        } else if (/^\+\d$/.test(input)) {
+          phoneInputElems.value += ' ';
+        } else if (/^\+\d \d{3}$/.test(input)) {
+          phoneInputElems.value += ' ';
+        } else if (/^\+\d \d{3} \d{3}$/.test(input)) {
+          phoneInputElems.value += ' ';
+        } else if (/^\+\d \d{3} \d{3} \d{2}$/.test(input)) {
+          phoneInputElems.value += ' ';
+        } else {
+          if (input[0] === '8') {
+            phoneInputElems.value = '+7' + input.slice(1, input.length);
+          } else {
+            phoneInputElems.value = input; // 8057451173
+          }
+        }
+      }
+      last = event.target.value;
     });
   }
 

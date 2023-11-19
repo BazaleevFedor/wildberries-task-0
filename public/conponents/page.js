@@ -5,6 +5,7 @@ import {cart} from "../backend_data/cart_data.js";
 import Cart from "./cart.js";
 import orderSummary from "./orderSummary.js";
 import orderDetails from "./orderDetails.js";
+import modal from "./modal.js";
 
 
 class Page {
@@ -24,6 +25,7 @@ class Page {
   addListeners() {
     const favoritesElems = document.getElementsByClassName('js-product-favorites');
     const missingFavoritesElems = document.getElementsByClassName('js-missing-product-favorites');
+
 
     /*Array.from(missingFavoritesElems).forEach((elem) => {
       elem.addEventListener('click', () => {
@@ -48,9 +50,8 @@ class Page {
 
     orderDetails.setDeliveryInfo(1, 2,2);
     orderSummary.setDeliveryType(1, 2,2);
-    orderDetails.setCardInfo(2);
-    orderSummary.setCardInfo(2);
 
+    modal.render();
     // this._refreshFavoritesNotification();
   }
 }

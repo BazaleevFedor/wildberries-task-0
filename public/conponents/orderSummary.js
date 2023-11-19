@@ -95,6 +95,12 @@ class OrderSummary {
         orderConfirmElem.innerHTML = 'Заказать';
       }
     });
+
+    orderConfirmElem?.addEventListener('click', () => {
+      if (orderDetails.validateAllFields()) {
+        window.location.href = '#';
+      }
+    });
   }
 }
 

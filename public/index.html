@@ -8,6 +8,24 @@
   <script type="module" src="index.js"></script>
 </head>
 <body class="ff-Regular">
+<div class="modal-background display-none" id="js-modal-window">
+  <div class="modal-window"> <!--или св-во address-->
+    <div class="modal-window__title">
+      <h3 class="title__card f-20 f-normal fw-700 lh-28 ls--0-2px">Способ оплаты</h3>
+      <h3 class="title__address f-20 f-normal fw-700 lh-28 ls--0-2px">Способ доставки</h3>
+      <img class="title__exit m-auto" src="static/img/close.svg" alt="Закрыть" id="js-close-modal">
+    </div>
+
+    <div class="modal-window__choose-card">
+
+    </div>
+    <div class="modal-window__choose-address"></div>
+
+    <div class="modal-window__select">
+      <button class="select__button pointer ff-SemiBold color-white br-none br-8 bg-magenta f-16 f-normal fw-700 lh-24" id="js-select">Выбрать</button>
+    </div>
+  </div>
+</div>
 <div class="main bg-violet">
   <div class="header">
     <button class="header__menu large_components bg-violet br-8 border-menu m-auto center size-menu p-0">
@@ -137,33 +155,33 @@
                 <div class="input-table">
                   <label class="grid user-forename f-normal fw-400" data-id="forename">
                     <span class="user__label f-13 lh-16 color-gray visibility" id="js-forename-label">Имя</span>
-                    <input class="user__input f-16 lh-24 color-gray p-0 br-none outline-none" placeholder="Имя" id="js-forename-input">
+                    <input class="user__input f-16 lh-24 color-gray p-0 br-none outline-none w-100" placeholder="Имя" id="js-forename-input">
                     <div class="user__input-line"></div>
                     <span class="user__error f-12 lh-14 color-orange" id="js-forename-error"></span>
                   </label>
                   <label class="grid user-surname f-normal fw-400" data-id="surname">
                     <span class="user__label f-13 lh-16 color-gray visibility">Фамилия</span>
-                    <input class="user__input f-16 lh-24 color-gray p-0 br-none outline-none" placeholder="Фамилия">
+                    <input class="user__input f-16 lh-24 color-gray p-0 br-none outline-none w-100" placeholder="Фамилия">
                     <div class="user__input-line"></div>
                     <span class="user__error f-12 lh-14 color-orange" id="js-surname-error"></span>
                   </label>
                   <label class="grid user-email f-normal fw-400" data-id="email">
                     <span class="user__label f-13 lh-16 color-gray visibility">Почта</span>
-                    <input class="user__input f-16 lh-24 color-gray p-0 br-none outline-none" placeholder="Почта">
+                    <input class="user__input f-16 lh-24 color-gray p-0 br-none outline-none w-100" placeholder="Почта">
                     <div class="user__input-line"></div>
                     <span class="user__error f-12 lh-14 color-orange" id="js-email-error"></span>
                   </label>
                   <label class="grid user-phone f-normal fw-400" data-id="phone">
                     <span class="user__label f-13 lh-16 color-gray visibility">Телефон</span>
-                    <input class="user__input f-16 lh-24 color-gray p-0 br-none outline-none" placeholder="Телефон">
+                    <input class="user__input f-16 lh-24 color-gray p-0 br-none outline-none w-100" placeholder="Телефон" id="js-phone-input">
                     <div class="user__input-line"></div>
                     <span class="user__error f-12 lh-14 color-orange" id="js-phone-error"></span>
                   </label>
                   <label class="grid user-inn f-normal fw-400" data-id="inn">
                     <span class="user__label f-13 lh-16 color-gray visibility">ИНН</span>
-                    <input class="user__input f-16 lh-24 color-gray p-0 br-none outline-none" placeholder="ИНН">
+                    <input class="user__input f-16 lh-24 color-gray p-0 br-none outline-none w-100" placeholder="ИНН">
                     <div class="user__input-line"></div>
-                    <span class="user__error f-12 lh-14 color-orange" id="js-inn-error"></span>
+                    <span class="user__error user__error-inn f-12 lh-14 color-orange" id="js-inn-error"></span>
                     <span class="user__inn f-12 lh-14 color-black" id="js-inn">Для таможенного оформления</span>
                   </label>
                 </div>
@@ -240,13 +258,13 @@
               <img class="m-auto img1" src="static/img/checkbox.svg" alt="checkbox">
               <img class="m-auto img2" src="static/img/checkbox_choose.svg" alt="checkbox_choose">
             </div>
-            <span class="pay-immediately-change__text f-13 fw-400 lh-16 color-black vertical-center">Списать оплату сразу</span>
+            <span class="pay-immediately-change__text pointer f-13 fw-400 lh-16 color-black vertical-center">Списать оплату сразу</span>
           </label>
           <span class="f-13 fw-400 lh-16 color-black" id="js-pay-immediately-text">Спишем оплату с карты при получении</span> <!--ToDo: проброс из js-->
         </div>
       </div>
       <div class="order-confirm grid-12">
-        <button class="order-confirm__button color-white ff-Bold f-normal f-16 fw-700 lh-24 p-0-32-5-32 br-8 bg-magenta br-none center" id="js-order-confirm">Заказать</button>
+        <button class="pointer order-confirm__button color-white ff-Bold f-normal f-16 fw-700 lh-24 p-0-32-5-32 br-8 bg-magenta br-none center" id="js-order-confirm">Заказать</button>
         <div class="grid-min-1fr grid-8">
           <img class="" src="static/img/agreement.svg" alt="agreement">
           <span class="order-confirm____text f-13 fw-400 lh-16 color-black">

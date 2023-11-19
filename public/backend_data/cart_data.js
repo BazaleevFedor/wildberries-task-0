@@ -134,9 +134,9 @@ export const cart = {
     price: 'Бесплатно',
   },
   cardInfo: [
-    {card: '1234 56•• •••• 1234', date: '01/30', bankImage: 'static/img/mir.svg'},
-    {card: '2345 67•• •••• 2345', date: '02/29', bankImage: 'static/img/visa.svg'},
-    {card: '3456 78•• •••• 3456', date: '03/31', bankImage: 'static/img/mastercard.svg'},
-    {card: '4567 89•• •••• 4567', date: '04/30', bankImage: 'static/img/maestro.svg'},
-  ]
+    {card: '1234 56•• •••• 1234', date: '01/30', bankImage: 'static/img/mir.svg', isChoose: true},
+    {card: '2345 67•• •••• 2345', date: '02/29', bankImage: 'static/img/visa.svg', isChoose: false},
+    {card: '3456 78•• •••• 3456', date: '03/31', bankImage: 'static/img/mastercard.svg', isChoose: false},
+    {card: '4567 89•• •••• 4567', date: '04/30', bankImage: 'static/img/maestro.svg', isChoose: false},
+  ],
 }
