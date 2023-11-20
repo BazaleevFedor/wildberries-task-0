@@ -164,7 +164,7 @@ class ProductItem {
                   </div>
                 </label>
                 <label class="label-checkbox pointer"> <!--ToDo: проброс из js-->
-                  <input type="checkbox" class="checkbox trash-checkbox default-hover" data-id="${product.id}">
+                  <input type="checkbox" class="icon trash-checkbox default-hover" data-id="${product.id}">
                   <div class="checkbox-images">
                     <img class="m-auto img1" src="static/img/trash.svg" alt="trash">
                     <img class="m-auto img2" src="static/img/trash_choose.svg" alt="trash_choose">

@@ -66,6 +66,10 @@ html, body {
   display: grid;
   grid-template-columns: min-content min-content 1fr;
 }
+.address__item {
+  display: grid;
+  grid-template-columns: min-content 1fr min-content;
+}
 .item__checkbox {
   display: grid;
   margin-right: 8px;
@@ -77,11 +81,20 @@ html, body {
   display: grid;
   padding: 0 22px;
 }
+.address__point {
+  gap: 8px;
+}
+.address__courier {
+  gap: 8px;
+}
 .address__buttons {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 8px;
   height: 36px;
+}
+.address__text {
+  margin-right: 8px;
 }
 
 .modal-background.card .title__card,
@@ -114,6 +127,16 @@ html, body {
   border-radius: 20px;
   border: 2px solid rgba(203, 17, 171, 0.15);
   background: #FFFFFF;
+}
+
+.modal-background.address.courier .address__courier,
+.modal-background.address.point .address__point {
+  display: grid;
+}
+
+.modal-background.address.courier .address__point,
+.modal-background.address.point .address__courier {
+  display: none;
 }
 
 
@@ -304,6 +327,7 @@ button:disabled {
   background: #9797AF;
 }
 .product-management {
+  margin-left: auto;
   display: flex;
   gap: 16px;
 }
@@ -405,6 +429,11 @@ button:disabled {
 .specifications__name {
   margin-bottom: 8px;
   max-width: 275px;
+}
+
+.missing-specifications__name {
+  margin-bottom: 8px;
+  max-width: 309px;
 }
 
 .counter {

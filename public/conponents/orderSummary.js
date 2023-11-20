@@ -52,16 +52,16 @@ class OrderSummary {
     dateDeliveryElem.innerHTML = date;
   }
 
-  setDeliveryType(typeIndex, addressIndex = null, pointIndex = null) {
+  setDeliveryType(isPoint, addressIndex, pointIndex) {
     const typeDeliveryElem = document.getElementById('js-delivery-type');
     const addressDeliveryElem = document.getElementById('js-delivery-address');
 
-    if (!typeIndex) {
-      typeDeliveryElem.innerHTML = cart.delivery.type[typeIndex].shortText;
-      addressDeliveryElem.innerHTML = cart.delivery.points[pointIndex].address;
+    if (isPoint) {
+      typeDeliveryElem.innerHTML = cart.delivery.type[isPoint].shortText;
+      addressDeliveryElem.innerHTML = cart.delivery.points.get(pointIndex).address;
     } else {
-      typeDeliveryElem.innerHTML = cart.delivery.type[typeIndex].text;
-      addressDeliveryElem.innerHTML = cart.delivery.address[addressIndex];
+      typeDeliveryElem.innerHTML = cart.delivery.type[isPoint].text;
+      addressDeliveryElem.innerHTML = cart.delivery.address.get(addressIndex);
     }
   }
 

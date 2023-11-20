@@ -9,10 +9,10 @@ class MissingProductItem {
 
     product.props.forEach(({name, value}) => {
       if (name === 'Размер') {
-        size = `<span class="image-block__size f-14 f-normal fw-400 lh-20 bg-white br-8 center small_components">${value}</span>`;
-        props += (`<span class="large_components">${name}: ${value}</span>`);
+        size = `<span class="image-block__size f-14 f-normal fw-400 lh-20 color-gray bg-white br-8 center small_components">${value}</span>`;
+        props += (`<span class="large_components color-gray">${name}: ${value}</span>`);
       } else {
-        props += (`<span>${name}: ${value}</span>`);
+        props += (`<span class="color-gray">${name}: ${value}</span>`);
       }
     })
 
@@ -45,12 +45,12 @@ class MissingProductItem {
               ${size}
             </div>
             <div class="item-info__specifications h-max-content">              
-              <span class="specifications__name lh-24 ">${product.name}</span> <!--ToDo: проброс из js-->
+              <span class="missing-specifications__name lh-24 color-gray">${product.name}</span> <!--ToDo: проброс из js-->
               ${props}
             </div>
           </div>
           <div class="item-counter p-t-9">
-            <div class="counter p-t-9">
+            <div class="counter">
               <div class="product-management m-vertical-auto"> <!--ToDo: проброс из js-->
                 <label class="label-checkbox pointer"> <!--ToDo: проброс из js-->
                   <input type="checkbox" class="checkbox js-missing-product-favorites default-hover" data-id="${product.id}" id="js-missing-product-favorites-${product.id}">
@@ -60,7 +60,7 @@ class MissingProductItem {
                   </div>
                 </label>
                 <label class="label-checkbox pointer"> <!--ToDo: проброс из js-->
-                  <input type="checkbox" class="checkbox missing-trash-checkbox default-hover" data-id="${product.id}">
+                  <input type="checkbox" class="icon missing-trash-checkbox default-hover" data-id="${product.id}">
                   <div class="checkbox-images">
                     <img class="m-auto img1" src="static/img/trash.svg" alt="trash">
                     <img class="m-auto img2" src="static/img/trash_choose.svg" alt="trash_choose">

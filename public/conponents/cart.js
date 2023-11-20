@@ -21,8 +21,8 @@ class Cart {
         break;
     }
 
-    OrderSummary.refreshPrice();
     this._refreshProductCount();
+    this._refreshAllChoose();
   }
 
   _refreshProductCount() {
@@ -46,7 +46,7 @@ class Cart {
   _refreshAllChoose(){
     const chooseAllElem = document.getElementById('js-choose-all-checkbox');
 
-    cart.chooseAll = true;
+    cart.chooseAll = cart.productList.size > 0;
     cart.productList.forEach((product) => {
       if (!product.isChoose) cart.chooseAll = false;
       productItem.setChooseProduct(product.id, product.isChoose);

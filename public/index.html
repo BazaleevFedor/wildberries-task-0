@@ -9,21 +9,28 @@
   <script type="module" src="index.js"></script>
 </head>
 <body class="ff-Regular">
-<div class="modal-background display-none" id="js-modal-window">
+<div class="modal-background display-none point" id="js-modal-window">
   <div class="modal-window"> <!--или св-во address-->
     <div class="modal-window__title">
       <h3 class="title__card f-20 f-normal fw-700 lh-28 ls--0-2px">Способ оплаты</h3>
       <h3 class="title__address f-20 f-normal fw-700 lh-28 ls--0-2px">Способ доставки</h3>
-      <img class="title__exit m-auto" src="static/img/close.svg" alt="Закрыть" id="js-close-modal">
+      <img class="title__exit m-auto pointer" src="static/img/close.svg" alt="Закрыть" id="js-close-modal">
     </div>
 
     <div class="modal-window__choose-card">
 
     </div>
-    <div class="modal-window__choose-address">
-      <div class="address__buttons f-13 f-normal fw-700 lh-16">
-        <button class="buttons__point">В пункт выдачи</button>
-        <button class="buttons__courier">Курьером</button>
+    <div class="modal-window__choose-address h-max-content">
+      <div class="address__buttons mb-24">
+        <button class="buttons__point f-13 f-normal fw-700 lh-16 ff-Bold pointer" id="js-buttons-point">В пункт выдачи</button>
+        <button class="buttons__courier f-13 f-normal fw-700 lh-16 ff-Bold pointer" id="js-buttons-courier">Курьером</button>
+      </div>
+      <span class="f-13 mb-8 f-normal fw-700 lh-16 ff-Bold">Мои адреса</span>
+      <div class="address__point">
+        <span class="f-13 mb-8 f-normal fw-700 lh-16 ff-Bold display-none" id="js-point-free">Вы еще не выбрали свой пункт выдачи ;(</span>
+      </div>
+      <div class="address__courier">
+        <span class="f-13 mb-8 f-normal fw-700 lh-16 ff-Bold display-none" id="js-courier-free">Вы еще не указали свой адрес для доставки ;(</span>
       </div>
     </div>
 
@@ -121,7 +128,7 @@
                     <div class="f-13 lh-16 mb-16">
                       <img class="star" src="static/img/star_fill.svg" alt="star" id="js-point-star">
                       <span class="star-point" id="js-point-rating">4.99</span>
-                      <span id="js-point-time">Ежедневно с 10 до 21 </span>
+                      <span id="js-point-time">Ежедневно с 10 до 21</span>
                     </div>
                   </div>
                   <span class="fw-600">Стоимость доставки</span>
@@ -259,7 +266,7 @@
         </div>
         <div class="pay-immediately br-8 bg-smoky grid-8 p-8-8-12-8">
           <label class="pay-immediately-change grid-min-1fr grid-8 pointer">
-            <input type="checkbox" class="checkbox opacity-hover">
+            <input type="checkbox" class="checkbox opacity-hover" id="pay-immediately-checkbox">
             <div class="checkbox-images">
               <img class="m-auto img1" src="static/img/checkbox.svg" alt="checkbox">
               <img class="m-auto img2" src="static/img/checkbox_choose.svg" alt="checkbox_choose">

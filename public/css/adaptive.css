@@ -71,6 +71,10 @@
     padding: 16px 20px 16px 24px;
   }
 
+  .counter {
+    width: 100px;
+  }
+
   .large_components {
     display: grid;
   }

@@ -192,7 +192,7 @@ class OrderDetails {
     }
   }
 
-  setDeliveryInfo(typeIndex, addressIndex = null, pointIndex = null) {
+  setDeliveryInfo(isPoint, addressIndex, pointIndex) {
     const typeDelivery = document.getElementById('js-delivery-type-order-details');
     const addressDelivery = document.getElementById('js-address-order-details');
     const starDelivery = document.getElementById('js-point-star');
@@ -203,14 +203,14 @@ class OrderDetails {
     ratingDelivery.classList.remove('display-none');
     timeDelivery.classList.remove('display-none');
 
-    if (!typeIndex) {
-      typeDelivery.innerHTML = cart.delivery.type[typeIndex].shortText;
-      addressDelivery.innerHTML = cart.delivery.points[pointIndex].address;
-      ratingDelivery.innerHTML = cart.delivery.points[pointIndex].rating;
-      timeDelivery.innerHTML = cart.delivery.points[pointIndex].time;
+    if (isPoint) {
+      typeDelivery.innerHTML = cart.delivery.type[isPoint].shortText;
+      addressDelivery.innerHTML = cart.delivery.points.get(pointIndex).address;
+      ratingDelivery.innerHTML = cart.delivery.points.get(pointIndex).rating;
+      timeDelivery.innerHTML = cart.delivery.points.get(pointIndex).time;
     } else {
-      typeDelivery.innerHTML = cart.delivery.type[typeIndex].text;
-      addressDelivery.innerHTML = cart.delivery.address[addressIndex];
+      typeDelivery.innerHTML = cart.delivery.type[isPoint].text;
+      addressDelivery.innerHTML = cart.delivery.address.get(addressIndex);
 
       starDelivery.classList.add('display-none');
       ratingDelivery.classList.add('display-none');

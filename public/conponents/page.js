@@ -48,9 +48,6 @@ class Page {
 
     Tabbar.setCartNotification(cart.productList.size);
 
-    orderDetails.setDeliveryInfo(1, 2,2);
-    orderSummary.setDeliveryType(1, 2,2);
-
     modal.render();
     // this._refreshFavoritesNotification();
   }
