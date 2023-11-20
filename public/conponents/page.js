@@ -4,7 +4,6 @@ import Tabbar from "./tabbar.js";
 import {cart} from "../backend_data/cart_data.js";
 import Cart from "./cart.js";
 import orderSummary from "./orderSummary.js";
-import orderDetails from "./orderDetails.js";
 import modal from "./modal.js";
 
 
@@ -15,11 +14,12 @@ class Page {
 
   _refreshProductCount() {
     Header.refreshCartNotification();
-    Tabbar.setCartNotification(cart.productList.size);
+    Tabbar.refreshCartNotification();
+    Tabbar.refreshFavoritesNotification()
   }
 
   _refreshFavoritesNotification() {
-    Tabbar.setFavoritesNotification(cart.favorites.length);
+    Tabbar.refreshFavoritesNotification()
   }
 
   addListeners() {
@@ -27,16 +27,27 @@ class Page {
     const missingFavoritesElems = document.getElementsByClassName('js-missing-product-favorites');
 
 
-    /*Array.from(missingFavoritesElems).forEach((elem) => {
+    Array.from(favoritesElems).forEach((elem) => {
       elem.addEventListener('click', () => {
-        const product = cart.missingProductsList.get(elem.getAttribute('data-id'));
+        let product = cart.productList.get(elem.getAttribute('data-id'));
+        product.isFavorites = elem.checked;
+        cart.productList.set(`${product.id}`, product);
+
+        console.log(product)
+
+        this._refreshFavoritesNotification();
+      });
+    });
+
+    Array.from(missingFavoritesElems).forEach((elem) => {
+      elem.addEventListener('click', () => {
+        let product = cart.missingProductsList.get(elem.getAttribute('data-id'));
         product.isFavorites = elem.checked;
         cart.missingProductsList.set(`${product.id}`, product);
 
         this._refreshFavoritesNotification();
-
       });
-    });*/
+    });
   }
 
   render() {
@@ -44,9 +55,11 @@ class Page {
 
     orderSummary.refreshPrice();
 
-    Tabbar.setCartNotification(cart.productList.size);
-
     modal.render();
+
+    this._refreshProductCount();
+    this._refreshFavoritesNotification();
+    this.addListeners();
     // this._refreshFavoritesNotification();
   }
 }

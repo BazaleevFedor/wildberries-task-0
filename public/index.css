@@ -239,6 +239,14 @@ html, body {
 .products-choose_all.choose .not-choose {
   display: block;
 }
+.choose__all {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  width: 100%;
+}
+.choose__all-icon {
+  margin-right: 11px;
+}
 
 .products__line {
   margin-top: 16px;
@@ -599,10 +607,11 @@ label.error .user__error {
   display: grid;
   gap: 8px;
   padding: 10px 16px 14px 16px;
+  max-width: 288px;
+  width: 100%;
 
   position: absolute;
 
-  top: 100%;
   z-index: 100;
 
   border-radius: 8px;

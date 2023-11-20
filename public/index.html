@@ -75,14 +75,14 @@
       <div class="content__cart">
         <div class="products">
           <div class="products-choose_all center" id="js-products-choose_all">
-            <label class="label-checkbox pointer choose">
+            <label class="label-checkbox pointer choose choose__all">
               <input type="checkbox" class="checkbox opacity-hover" checked id="js-choose-all-checkbox">
-              <div class="checkbox-images">
+              <div class="checkbox-images choose__all-icon">
                 <img class="m-auto img1" src="static/img/checkbox.svg" alt="checkbox">
                 <img class="m-auto img2" src="static/img/checkbox_choose.svg" alt="checkbox_choose">
               </div>
+              <span class="f-16 f-normal fw-400 lh-24 m-auto w-100 choose">Выбрать все</span>
             </label>
-            <span class="f-16 f-normal fw-400 lh-24 vertical-center w-100 choose">Выбрать все</span>
             <span class="f-16 f-normal ff-SemiBold fw-400 lh-24 vertical-center w-100 not-choose" id="js-product-count-price"></span>
             <button class="br-none pointer p-0 center bg-inherit rotate" id="js-toggle-products">
               <img class="hide" src="static/img/hide.svg" alt="hide">
@@ -138,7 +138,7 @@
                 <span class="return-info__text f-13 fw-400 lh-16 color-black">
                   <span>Обратная доставка товаров на склад при отказе — </span>
                   <span class="color-green underline underline-green pointer info-button">бесплатно</span>
-                  <div class="info f-13 f-normal fw-400 lh-16 left-50">
+                  <div class="info f-13 f-normal fw-400 lh-16">
                     <span>Если товары вам не подойдут, мы вернем их обратно на склад — это бесплатно</span>
                   </div>
                 </span>
@@ -244,7 +244,7 @@
           <span class="return-info__text f-13 fw-400 lh-16 color-black">
             <span>Обратная доставка товаров на склад при отказе — </span>
             <a href="#" class="color-green underline underline-green pointer info-button text-href">бесплатно</a>
-            <div class="info f-13 f-normal fw-400 lh-16 right-0">
+            <div class="info f-13 f-normal fw-400 lh-16">
               <span>Если товары вам не подойдут, мы вернем их обратно на склад — это бесплатно</span>
             </div>
           </span>
@@ -296,11 +296,11 @@
     <img class="" src="static/img/catalog_tabbar.svg" alt="catalog_tabbar">
     <div class="cart-tabbar vertical-center">
       <img class="" src="static/img/cart_tabbar.svg" alt="cart_tabbar">
-      <div class="tabbar-cart__notification br-16 bg-orange color-white f-10 fw-700 lh-18 display-inline-flex" id="js-cart-tabbar-notification"> 3 </div> <!--ToDo: проброс из js-->
+      <div class="tabbar-cart__notification br-16 bg-orange color-white f-10 fw-700 lh-18 display-inline-flex" id="js-cart-tabbar-notification"></div> <!--ToDo: проброс из js-->
     </div>
     <div class="favorites-tabbar vertical-center">
       <img class="" src="static/img/favorites_tabbar.svg" alt="favorites_tabbar">
-      <div class="tabbar-cart__notification br-16 bg-orange color-white f-10 fw-700 lh-18 display-inline-flex" id="js-favorites-tabbar-notification">4</div> <!--ToDo: проброс из js-->
+      <div class="tabbar-cart__notification br-16 bg-orange color-white f-10 fw-700 lh-18" id="js-favorites-tabbar-notification"></div> <!--ToDo: проброс из js-->
     </div>
     <img class="" src="static/img/profile_tabbar.svg" alt="profile_tabbar">
   </div>

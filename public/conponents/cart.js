@@ -5,6 +5,7 @@ import Validation from "../modules/validation.js";
 import OrderSummary from "./orderSummary.js";
 import Grammar from "../modules/grammar.js";
 import Header from "./header.js";
+import page from "./page.js";
 
 class Cart {
   constructor() {
@@ -24,6 +25,7 @@ class Cart {
 
     this._refreshProductCount();
     this._refreshAllChoose();
+    page._refreshProductCount();
   }
 
   _refreshProductCount() {
