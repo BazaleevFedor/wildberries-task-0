@@ -9,7 +9,7 @@ class OrderSummary {
   }
 
   refreshPrice() {
-    const priceElem = document.getElementById('js-price');
+    const priceElem = document.getElementsByClassName('js-price');
     const currencyElem = document.getElementById('js-price-currency');
     const countElem = document.getElementById('js-product-count');
     const priceWithoutDiscountElem = document.getElementById('js-price-without-discount');
@@ -33,7 +33,8 @@ class OrderSummary {
 
     const priceChange = new PriceChange();
     priceChange.debounce([
-      {field: priceElem, value: resultPrice, currency: false},
+      {field: priceElem[0], value: resultPrice, currency: false},
+      {field: priceElem[1], value: resultPrice, currency: false},
       {field: priceWithoutDiscountElem, value: resultPriceWithoutDiscount, currency: true},
       {field: discountElem, value: resultDiscount, currency: true, minus: true},
     ]);
@@ -57,7 +58,7 @@ class OrderSummary {
     const addressDeliveryElem = document.getElementById('js-delivery-address');
 
     if (isPoint) {
-      typeDeliveryElem.innerHTML = cart.delivery.type[isPoint].shortText;
+      typeDeliveryElem.innerHTML = cart.delivery.type[isPoint].text;
       addressDeliveryElem.innerHTML = cart.delivery.points.get(pointIndex).address;
     } else {
       typeDeliveryElem.innerHTML = cart.delivery.type[isPoint].text;
@@ -85,7 +86,7 @@ class OrderSummary {
     const payImmediatelyChangeElem = document.getElementById('pay-immediately-checkbox');
     const textImmediatelyElem = document.getElementById('js-pay-immediately-text');
     const orderConfirmElem = document.getElementById('js-order-confirm');
-    const priceElem = document.getElementById('js-price');
+    const priceElem = document.querySelector('.js-price');
 
     payImmediatelyChangeElem?.addEventListener('click', () => {
       textImmediatelyElem.classList.toggle('display-none');

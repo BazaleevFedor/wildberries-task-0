@@ -14,7 +14,7 @@ class Page {
   }
 
   _refreshProductCount() {
-    Header.setCartNotification(cart.productList.size);
+    Header.refreshCartNotification();
     Tabbar.setCartNotification(cart.productList.size);
   }
 
@@ -43,8 +43,6 @@ class Page {
     Cart.render();
 
     orderSummary.refreshPrice();
-
-    Header.setCartNotification(cart.productList.size);
 
     Tabbar.setCartNotification(cart.productList.size);
 

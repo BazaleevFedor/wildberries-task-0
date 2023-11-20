@@ -103,7 +103,7 @@ class OrderDetails {
       `
         <div class="cart-tabbar">
           <img class="delivery-table__pic br-8" src="${img}" alt="1">
-          <div class="delivery__notification br-16 bg-orange color-white f-10 fw-600 lh-18 ta-center">${count}</div> <!--ToDo: проброс из js-->
+          <div class="delivery__notification br-16 bg-orange color-white f-10 fw-600 lh-18 center">${count}</div> <!--ToDo: проброс из js-->
         </div>
       `
     );
@@ -113,7 +113,7 @@ class OrderDetails {
     const lastClass = isLast ? '' : 'mb-photo';
     return (
       `
-        <span class="fw-600 mb-12 js-del-elem">${date}</span>
+        <span class="fw-600 mb-12 js-del-elem ff-SemiBold">${date}</span>
         <div class="delivery-table__photo br-8 js-del-elem ${lastClass}" id="${id}">
         
         </div> 

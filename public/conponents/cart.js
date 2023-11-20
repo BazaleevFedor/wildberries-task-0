@@ -4,6 +4,7 @@ import missingProductItem from "./missingProductItem.js";
 import Validation from "../modules/validation.js";
 import OrderSummary from "./orderSummary.js";
 import Grammar from "../modules/grammar.js";
+import Header from "./header.js";
 
 class Cart {
   constructor() {
@@ -41,6 +42,8 @@ class Cart {
     const missingProductCountElem = document.getElementById('js-missing-product-count');
     let count = cart.missingProductsList.size;
     missingProductCountElem.innerHTML = `${count > 1 ? 'Отсутствуют' : 'Отсутствует'} · ${count} ${Grammar.productsForm(count)}`;
+
+    Header.refreshCartNotification();
   }
 
   _refreshAllChoose(){

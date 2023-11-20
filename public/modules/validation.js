@@ -6,6 +6,8 @@ class Validation {
         newCount = leftInStock;
       } else if (newCount < 1) {
         newCount = 1;
+      } else if (newCount > 9999) {
+        newCount = 9999;
       }
     } else {
       newCount = lastCount;

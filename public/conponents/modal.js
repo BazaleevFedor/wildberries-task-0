@@ -151,12 +151,9 @@ class Modal {
 
   chooseAddress(newId, isSelect = false) {
     const modalCards = document.getElementsByClassName('js-modal-address');
-    console.log(modalCards);
     Array.from(modalCards).forEach((card) => {
       card.checked = card.getAttribute('data-id') === newId;
     });
-    console.log(modalCards);
-
 
     if (isSelect) {
       const id = Number(newId.split('-')[1]);

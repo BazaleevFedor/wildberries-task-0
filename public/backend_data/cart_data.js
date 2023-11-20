@@ -13,8 +13,8 @@ export const cart = {
         image: 'backend_data/1.png',
         isChoose: true,
         props: [
-          {name: 'Размер', value: '56'},
           {name: 'Цвет', value: 'белый'},
+          {name: 'Размер', value: '56'},
         ],
         provider: 'Коледино WB',
         providerDetails: {
@@ -67,7 +67,7 @@ export const cart = {
       }],
       ['3', {
         id: '3',
-        name: 'Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные,       Faber-Castell',
+        name: 'Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные,       Faber-Castell ',
         image: 'backend_data/3.png',
         isChoose: true,
         props: [],
@@ -95,7 +95,7 @@ export const cart = {
     ['1', {
       id: 1,
       name: 'Футболка UZcotton мужская',
-      image: 'backend_data/1.png',
+      image: 'backend_data/1.1.png',
       props: [
         {name: 'Цвет', value: 'белый'},
         {name: 'Размер', value: '56'},
@@ -105,7 +105,7 @@ export const cart = {
     ['2', {
       id: 2,
       name: 'Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple iPhone XR, MobiSafe',
-      image: 'backend_data/2.png',
+      image: 'backend_data/2.1.png',
       props: [
         {name: 'Цвет', value: 'прозрачный'},
       ],
@@ -113,8 +113,8 @@ export const cart = {
     }],
     ['3', {
       id: 3,
-      name: 'Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные,       Faber-Castell',
-      image: 'backend_data/3.png',
+      name: 'Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные, Faber-Castell ',
+      image: 'backend_data/3.1.png',
       isChoose: true,
       props: [],
       isFavorites: false,
@@ -126,7 +126,7 @@ export const cart = {
       false: {shortText: 'Доставит курьер', text: 'Доставит курьер'}
     },
     points: new Map([
-      [0, {address: 'г. Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 67/1', rating: '4.99', time: 'Ежедневно с 10 до 21'}],
+      [0, {address: 'Бишкек, улица Ахматбека Суюмбаева, 12/1', rating: '4.99', time: 'Ежедневно с 10 до 21'}],
       [1, {address: 'г. Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 67/1', rating: '4.99', time: 'Ежедневно с 10 до 21'}],
       [2, {address: 'г. Бишкек, улица Табышалиева, д. 57', rating: '4.99', time: 'Ежедневно с 10 до 21'}],
     ]),

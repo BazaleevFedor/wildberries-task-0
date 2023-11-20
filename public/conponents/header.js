@@ -1,10 +1,19 @@
+import {cart} from "../backend_data/cart_data.js";
+
 class Header {
   constructor() {
-    this.cartNotification = document.getElementById('js-cart-notification');
+    this.refreshCartNotification();
   }
 
-  setCartNotification(value) {
-    if (this.cartNotification) this.cartNotification.innerHTML = `${value}`;
+  refreshCartNotification() {
+    const cartNotification = document.getElementById('js-cart-notification');
+
+    if (cart.productList.size) {
+      cartNotification.classList.remove('display-none');
+      if (cartNotification) cartNotification.innerHTML = `${cart.productList.size}`;
+    } else {
+      cartNotification.classList.add('display-none');
+    }
   }
 }
 
