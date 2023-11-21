@@ -16,6 +16,11 @@ class Validation {
     return newCount;
   }
 
+  /**
+   * Валидация имени.
+   * @param forename - имя
+   * @returns {{errorText: string, isCorrect: boolean}} - состояние ошибки и ее текст.
+   */
   forename(forename) {
     const nameRegex = /^[A-Za-zА-Яа-яЁё]+$/;
 

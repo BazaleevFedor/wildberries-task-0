@@ -1,8 +1,5 @@
 import {cart} from "../backend_data/cart_data.js";
 
-/**
- *
- */
 export default class PriceChange {
   timer;
   constructor() {
@@ -12,6 +9,10 @@ export default class PriceChange {
     this.TIMEOUT = 5;
   }
 
+  /**
+   * Функция обеспечивает постепенное изменение цены.
+   * @param priseList - список элементов, цены в которых должны одновременно меняться.
+   */
   debounce(priseList) {
     if (this.timer) {
       clearTimeout(this.timer);
