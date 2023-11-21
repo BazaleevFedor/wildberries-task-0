@@ -129,7 +129,6 @@ class Modal {
       arrayWithDeleteElem.delete(id.split('-')[1]);
     }
 
-    console.log(arrayWithDeleteElem)
     if (cart.delivery.points.size === 0) {
       document.getElementById('js-point-free').classList.remove('display-none');
     }

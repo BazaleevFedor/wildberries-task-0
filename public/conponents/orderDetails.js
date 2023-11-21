@@ -103,7 +103,7 @@ class OrderDetails {
       `
         <div class="cart-tabbar">
           <img class="delivery-table__pic br-8" src="${img}" alt="1">
-          <div class="delivery__notification br-16 bg-orange color-white f-10 fw-600 lh-18 center">${count}</div> <!--ToDo: проброс из js-->
+          <div class="delivery__notification br-16 bg-orange color-white f-10 fw-600 lh-18 center">${count}</div> 
         </div>
       `
     );

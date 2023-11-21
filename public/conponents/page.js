@@ -1,11 +1,8 @@
 import Header from "./header.js";
 import Tabbar from "./tabbar.js";
-
-import {cart} from "../backend_data/cart_data.js";
 import Cart from "./cart.js";
 import orderSummary from "./orderSummary.js";
 import modal from "./modal.js";
-
 
 class Page {
   constructor() {
@@ -31,7 +28,6 @@ class Page {
 
     this._refreshProductCount();
     this._refreshFavoritesNotification();
-    // this._refreshFavoritesNotification();
   }
 }
 

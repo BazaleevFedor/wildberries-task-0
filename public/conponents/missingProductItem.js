@@ -62,21 +62,21 @@ class MissingProductItem {
                 ${size}
               </div>
               <div class="item-info__specifications h-max-content">              
-                <span class="missing-specifications__name overflow-ellipsis lh-24 color-gray">${product.name}</span> <!--ToDo: проброс из js-->
+                <span class="missing-specifications__name overflow-ellipsis lh-24 color-gray">${product.name}</span> 
                 ${props}
               </div>
             </div>
             <div class="item-counter missing-counter p-t-9">
               <div class="counter">
-                <div class="product-management m-vertical-auto"> <!--ToDo: проброс из js-->
-                  <label class="label-checkbox pointer"> <!--ToDo: проброс из js-->
+                <div class="product-management m-vertical-auto"> 
+                  <label class="label-checkbox pointer"> 
                     <input type="checkbox" class="icon js-missing-product-favorites default-hover" data-id="${product.id}" id="js-missing-product-favorites-${product.id}">
                     <div class="checkbox-images">
                       <img class="m-auto img1" src="static/img/favorites.svg" alt="Добавить в избранное">
                       <img class="m-auto img2" src="static/img/favorites_choose.svg" alt="Убрать из избранного">
                     </div>
                   </label>
-                  <label class="label-checkbox pointer"> <!--ToDo: проброс из js-->
+                  <label class="label-checkbox pointer"> 
                     <input type="checkbox" class="icon missing-trash-checkbox default-hover" data-id="${product.id}">
                     <div class="checkbox-images">
                       <img class="m-auto img1" src="static/img/trash.svg" alt="Удалить">
