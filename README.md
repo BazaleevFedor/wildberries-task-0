@@ -1,3 +1,13 @@
-# wildberries-task-0
+# wildberries task L0
 
-деплой: https://gleaming-pasca-8ca7e2.netlify.app/
+Реализация задания LO в рамках стажировки Wildberries. 
+
+[Задание](https://docs.google.com/document/d/1pjxYEQluizEyjZzotw8HRbYzmQO7V15-3PK0f2TgMUU/edit#heading=h.21ry3cct3qvs)
+
+[Деплой](https://gleaming-pasca-8ca7e2.netlify.app/)
+
+## Стек технологий
+Согласно заданию использовался голый js без библиотек. Верстка html, css.
+
+## Реализация
+Изменение данных на странице происходит точечно. Уникальным элементам (сумма, кол-во товаров и тд.) присвоены id, по которым они точечно изменяются без перерендеринга всей страницы. Элементы, которых на странице много (продукты), имеют атрибут data-id, по которым их можно точечно изменять. Исходные данные хранятся в json в файле cart_data.js.
