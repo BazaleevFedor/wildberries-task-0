@@ -1,6 +1,6 @@
 # wildberries task L0
 
-Реализация задания LO в рамках стажировки Wildberries. 
+Реализация корзины маркетплейса "Товары и точка" согласно задания LO стажировки Wildberries. 
 
 [Задание](https://docs.google.com/document/d/1pjxYEQluizEyjZzotw8HRbYzmQO7V15-3PK0f2TgMUU/edit#heading=h.21ry3cct3qvs)
 
