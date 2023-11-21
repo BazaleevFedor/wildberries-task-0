@@ -71,6 +71,15 @@ class ProductItem {
     checkedSmallElem.checked = state;
   }
 
+  setFavoritesProduct(id, state) {
+    const elem = document.getElementById(`js-product-favorites-${id}`);
+    if (state) {
+      elem.classList.add('checked')
+    } else {
+      elem.classList.remove('checked')
+    }
+  }
+
   setCount(id, count, leftInStock) {
     const countElem = document.getElementById(`js-product-counter-${id}`);
     const decElem = document.getElementById(`js-product-counter-dec-${id}`);
@@ -173,7 +182,7 @@ class ProductItem {
                 <span class="product-in-stock f-13 f-normal fw-400 lh-16 color-red m-vertical-auto" id="js-product-stock-${product.id}"></span> <!--ToDo: проброс из js-->
                 <div class="product-management m-vertical-auto"> 
                   <label class="label-checkbox pointer"> <!--ToDo: проброс из js-->
-                    <input type="checkbox" class="checkbox js-product-favorites default-hover" data-id="${product.id}" id="js-product-favorites-${product.id}">
+                    <input type="checkbox" class="icon js-product-favorites default-hover" data-id="${product.id}" id="js-product-favorites-${product.id}">
                     <div class="checkbox-images">
                       <img class="m-auto img1" src="static/img/favorites.svg" alt="favorites">
                       <img class="m-auto img2" src="static/img/favorites_choose.svg" alt="favorites_choose">

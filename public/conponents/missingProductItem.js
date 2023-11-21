@@ -23,6 +23,15 @@ class MissingProductItem {
     return {size, props};
   }
 
+  setFavoritesProduct(id, state) {
+    const elem = document.getElementById(`js-missing-product-favorites-${id}`);
+    if (state) {
+      elem.classList.add('checked')
+    } else {
+      elem.classList.remove('checked')
+    }
+  }
+
   removeItem(id) {
     const elementsWrapper = document.querySelectorAll('.wrapper-missing-product__item');
     elementsWrapper.forEach((element) => {
@@ -61,7 +70,7 @@ class MissingProductItem {
               <div class="counter">
                 <div class="product-management m-vertical-auto"> <!--ToDo: проброс из js-->
                   <label class="label-checkbox pointer"> <!--ToDo: проброс из js-->
-                    <input type="checkbox" class="checkbox js-missing-product-favorites default-hover" data-id="${product.id}" id="js-missing-product-favorites-${product.id}">
+                    <input type="checkbox" class="icon js-missing-product-favorites default-hover" data-id="${product.id}" id="js-missing-product-favorites-${product.id}">
                     <div class="checkbox-images">
                       <img class="m-auto img1" src="static/img/favorites.svg" alt="Добавить в избранное">
                       <img class="m-auto img2" src="static/img/favorites_choose.svg" alt="Убрать из избранного">

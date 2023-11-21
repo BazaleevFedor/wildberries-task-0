@@ -222,10 +222,6 @@
   width: max-content;
 }
 
-.box-shadow {
-  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.30), 0 2px 10px 0 rgba(0, 0, 0, 0.15);
-}
-
 .text-spacing {
   display: flex;
   justify-content: space-between;
@@ -294,6 +290,13 @@
 .icon:hover + .checkbox-images .img2 {
   display: block;
 }
+.icon.checked + .checkbox-images .img1 {
+  display: none;
+}
+.icon.checked + .checkbox-images .img2 {
+  display: block;
+}
+
 
 .checkbox.default-hover:hover + .checkbox-images .img1 {
   display: none;

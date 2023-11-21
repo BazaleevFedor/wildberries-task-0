@@ -22,34 +22,6 @@ class Page {
     Tabbar.refreshFavoritesNotification()
   }
 
-  addListeners() {
-    const favoritesElems = document.getElementsByClassName('js-product-favorites');
-    const missingFavoritesElems = document.getElementsByClassName('js-missing-product-favorites');
-
-
-    Array.from(favoritesElems).forEach((elem) => {
-      elem.addEventListener('click', () => {
-        let product = cart.productList.get(elem.getAttribute('data-id'));
-        product.isFavorites = elem.checked;
-        cart.productList.set(`${product.id}`, product);
-
-        console.log(product)
-
-        this._refreshFavoritesNotification();
-      });
-    });
-
-    Array.from(missingFavoritesElems).forEach((elem) => {
-      elem.addEventListener('click', () => {
-        let product = cart.missingProductsList.get(elem.getAttribute('data-id'));
-        product.isFavorites = elem.checked;
-        cart.missingProductsList.set(`${product.id}`, product);
-
-        this._refreshFavoritesNotification();
-      });
-    });
-  }
-
   render() {
     Cart.render();
 
@@ -59,7 +31,6 @@ class Page {
 
     this._refreshProductCount();
     this._refreshFavoritesNotification();
-    this.addListeners();
     // this._refreshFavoritesNotification();
   }
 }

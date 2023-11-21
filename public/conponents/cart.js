@@ -6,6 +6,7 @@ import OrderSummary from "./orderSummary.js";
 import Grammar from "../modules/grammar.js";
 import Header from "./header.js";
 import page from "./page.js";
+import tabbar from "./tabbar.js";
 
 class Cart {
   constructor() {
@@ -78,7 +79,6 @@ class Cart {
     Array.from(trashElems).forEach((elem) => {
       elem.addEventListener('click', () => {
         const productId = elem.getAttribute('data-id');
-
         this._removeProduct('product', productId);
       });
     });
@@ -86,8 +86,39 @@ class Cart {
     Array.from(missingTrashElems).forEach((elem) => {
       elem.addEventListener('click', () => {
         const productId = elem.getAttribute('data-id');
-
         this._removeProduct('missing', productId)
+      });
+    });
+
+    const changeFavoritesStatus = (id) => {
+      cart.productList.forEach((product) => {
+        if (product.id === id) {
+          product.isFavorites = !product.isFavorites;
+        }
+      });
+
+      cart.missingProductsList.forEach((product) => {
+        if (product.id === id) {
+          product.isFavorites = !product.isFavorites;
+        }
+      });
+    }
+
+    Array.from(favoritesElems).forEach((elem) => {
+      elem.addEventListener('click', () => {
+        const productId = elem.getAttribute('data-id');
+        changeFavoritesStatus(productId);
+
+        tabbar.refreshFavoritesNotification();
+      });
+    });
+
+    Array.from(missingFavoritesElems).forEach((elem) => {
+      elem.addEventListener('click', () => {
+        const productId = elem.getAttribute('data-id');
+        changeFavoritesStatus(productId);
+
+        tabbar.refreshFavoritesNotification();
       });
     });
 

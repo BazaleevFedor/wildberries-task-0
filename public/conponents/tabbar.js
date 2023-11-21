@@ -1,4 +1,6 @@
 import {cart} from "../backend_data/cart_data.js";
+import productItem from "./productItem.js";
+import missingProductItem from "./missingProductItem.js";
 
 class Tabbar {
   constructor() {
@@ -22,27 +24,34 @@ class Tabbar {
   }
 
   refreshFavoritesNotification() {
-    let value = 0;
-
     let productFavoritesId = [];
     cart.productList.forEach((product) => {
       if (product.isFavorites && !productFavoritesId.includes(product.id)) {
-        value++;
-        productFavoritesId.push(Number(product.id));
+        productFavoritesId.push(product.id);
+      }
+
+      if (product.isFavorites) {
+        productItem.setFavoritesProduct(product.id, true);
+      } else {
+        productItem.setFavoritesProduct(product.id, false);
       }
     });
-
     cart.missingProductsList.forEach((product) => {
       if (product.isFavorites && !productFavoritesId.includes(product.id)) {
-        value++;
-        productFavoritesId.push(Number(product.id));
+        productFavoritesId.push(product.id);
+      }
+
+      if (product.isFavorites) {
+        missingProductItem.setFavoritesProduct(product.id, true);
+      } else {
+        missingProductItem.setFavoritesProduct(product.id, false);
       }
     });
 
-    if (value) {
+    if (productFavoritesId.length) {
       this.favoritesNotification.classList.remove('display-none')
       this.favoritesNotification.classList.add('display-inline-flex');
-      this.favoritesNotification.innerHTML = `${value}`;
+      this.favoritesNotification.innerHTML = `${productFavoritesId.length}`;
     } else {
       this.favoritesNotification.classList.add('display-none')
       this.favoritesNotification.classList.remove('display-inline-flex');

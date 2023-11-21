@@ -114,7 +114,7 @@ class Modal {
 
 
   removeAddress(id) {
-    const deleteElem = document.querySelector(`.address__item[data-id="${id}"]`);;
+    const deleteElem = document.querySelector(`.address__item[data-id="${id}"]`);
     let arrayWithDeleteElem;
 
     if (id.includes('point')) {
@@ -126,13 +126,14 @@ class Modal {
     const checkedElem = deleteElem.querySelector('input[type="checkbox"]');
     if (!checkedElem.checked) {
       deleteElem.remove();
-      arrayWithDeleteElem.delete(id);
+      arrayWithDeleteElem.delete(id.split('-')[1]);
     }
 
-    if (cart.delivery.points.length === 0) {
+    console.log(arrayWithDeleteElem)
+    if (cart.delivery.points.size === 0) {
       document.getElementById('js-point-free').classList.remove('display-none');
     }
-    if (cart.delivery.address.length === 0) {
+    if (cart.delivery.address.size === 0) {
       document.getElementById('js-courier-free').classList.remove('display-none');
     }
   }
@@ -156,7 +157,7 @@ class Modal {
     });
 
     if (isSelect) {
-      const id = Number(newId.split('-')[1]);
+      const id = newId.split('-')[1];
       if (newId.includes('point')) {
         orderSummary.setDeliveryType(true, 0, id);
         orderDetails.setDeliveryInfo(true, 0, id);
