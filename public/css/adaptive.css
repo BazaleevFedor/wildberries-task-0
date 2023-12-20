@@ -69,6 +69,14 @@
     height: 100%;
   }
 
+  .select-button {
+    width: 100%;
+  }
+
+  .modal-window__select-button {
+    padding: 16px;
+  }
+
   .hide {
     margin-right: 4px;
   }
@@ -277,6 +285,11 @@
     left: 30%;
     width: 40%;
     height: 52%;
+    border-radius: 16px;
+  }
+
+  .modal-window__select-button {
+    padding: 16px 24px 24px 24px;
   }
 
   .product__pic {
